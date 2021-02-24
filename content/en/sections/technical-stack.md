@@ -1,0 +1,1 @@
+Read more about [our technical stack](/about-us/technical-stack)

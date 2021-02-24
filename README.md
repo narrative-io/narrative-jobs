@@ -27,7 +27,9 @@ To preview the static generated app, run `yarn start`
 For detailed explanation on how things work, checkout [nuxt/content](https://content.nuxtjs.org) and [@nuxt/content theme docs](https://content.nuxtjs.org/themes-docs).
 
 ## TODO
-- Extract intro  + useful links components for job offers
-- marko feedback
-- narrative logo
-- hiring-dev@ : active?
+- Hacker news simplified offer with links to jobs.narrative.io
+- LinkedIn simplified offer with links to jobs.narrative.io
+- Feedback Tina: The Project Prioritization Queue
+- Remove duplication in internal hiring process page
+- deprecate transparency
+- add workstation setup

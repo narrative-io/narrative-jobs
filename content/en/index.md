@@ -1,27 +1,35 @@
 ---
-title: Introduction
+title: ''
+menuTitle: Programming Jobs
 description: ''
 position: 1
 category: ''
-features:
-  - Feature 1
-  - Feature 2
-  - Feature 3
 ---
 
-<img src="/preview.png" class="light-img" width="1280" height="640" alt=""/>
-<img src="/preview-dark.png" class="dark-img" width="1280" height="640" alt=""/>
+<img src="/banner.png" alt="narrative logo" />
 
-[Module]() for [NuxtJS](https://nuxtjs.org).
+## Open Positions
 
-<alert type="success">
+Narrative I/O is hiring:
+- [Scala/AWS/Spark Backend Engineers (Remote US and Canada)](/open-positions/backend-engineer)
+- [Web Software Engineer (Remote US and Canada)](/open-positions/web-software-engineer)
 
-Your documentation has been created successfully!
+We are currently planning to hire several engineers throughout 2021. If you are interested to explore opportunities 
+but cannot make an immediate move, do not hesitate to reach out, we are flexible. 
 
-</alert>
 
-## Features
+## Technical Stack
 
-<list :items="features"></list>
+<common-section section-name="technical-stack"></common-section>
 
-<p class="flex items-center">Enjoy light and dark mode:&nbsp;<app-color-switcher class="inline-flex ml-2"></app-color-switcher></p>
+## The Team (Remote US and Canada)
+
+<common-section section-name="team"></common-section>
+
+## Our Mission
+
+<common-section section-name="mission"></common-section>
+
+## Dev Hiring Process
+
+Read more about the [dev hiring process](/process/dev-hiring-process) 
