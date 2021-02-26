@@ -132,4 +132,4 @@ However, like any living codebase, our rules and processes still contain bugs, i
 
 ## Credits
  
-[Bizo's culture document](http://dev.bizo.com/culture/) has served an inspiration while writing this document.
+[Bizo's culture document](http://dev.bizo.com/culture/) has served as inspiration while writing this document.
