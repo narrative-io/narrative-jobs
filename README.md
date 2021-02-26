@@ -17,8 +17,7 @@ yarn dev
 ## Deploy to Github Pages
 
 ```bash
-yarn generate
-yarn deploy
+yarn generate && yarn deploy
 ```
 
 ## Static Generation
