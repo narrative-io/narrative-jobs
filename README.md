@@ -34,9 +34,12 @@ To preview the static generated app, run `yarn start`
 For detailed explanation on how things work, checkout [nuxt/content](https://content.nuxtjs.org) and [@nuxt/content theme docs](https://content.nuxtjs.org/themes-docs).
 
 ## TODO
-- Hacker news simplified offer with links to jobs.narrative.io
-- LinkedIn simplified offer with links to jobs.narrative.io
-- Feedback Tina: The Project Prioritization Queue
-- Remove duplication in internal hiring process page
-- deprecate transparency
-- add workstation setup
+- [ ] Fix favicon: nuxt loads the default nuxt icon, not the one we provided
+- [ ] Remove duplicated content on internal notion hiring process page
+- [ ] Deprecate transparency repo in favor of this one
+- [ ] Simplified offers with links to jobs.narrative.io
+  - [ ] - Hacker news
+  - [ ] LinkedIn
+- [ ] Deprecate transparency repo
+    - [ ] Add workstation setup guide here
+    - [ ] add note in transparency repo stating that the repo is deprecated
