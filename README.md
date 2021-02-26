@@ -34,6 +34,7 @@ To preview the static generated app, run `yarn start`
 For detailed explanation on how things work, checkout [nuxt/content](https://content.nuxtjs.org) and [@nuxt/content theme docs](https://content.nuxtjs.org/themes-docs).
 
 ## TODO
+- [ ] Get HTTPs to work
 - [ ] Fix favicon: nuxt loads the default nuxt icon, not the one we provided
 - [ ] Remove duplicated content on internal notion hiring process page
 - [ ] Deprecate transparency repo in favor of this one
