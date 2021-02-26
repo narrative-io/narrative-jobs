@@ -6,7 +6,7 @@ position: 1
 category: ''
 ---
 
-<img src="/banner.png" alt="narrative logo" />
+<img src="banner.png" alt="narrative logo" />
 
 ## Open Positions
 

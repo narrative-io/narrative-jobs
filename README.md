@@ -14,6 +14,13 @@ yarn install
 yarn dev
 ```
 
+## Deploy to Github Pages
+
+```bash
+yarn generate
+yarn deploy
+```
+
 ## Static Generation
 
 This will create the `dist/` directory for publishing to static hosting:
