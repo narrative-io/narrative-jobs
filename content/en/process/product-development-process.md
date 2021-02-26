@@ -46,7 +46,7 @@ Read more on [design reviews](/about-us/day-in-life-dev#design-reviews)
 ## Ceremonies
 
 We do not have the typical "retrospective" and "demo" ceremonies, but have a bi-weekly "sprint planning" 
-session and a weekly catch-all "dev discussion" where we discuss the areas for improvements, etc.
+session and a weekly catch-all dev meeting where we discuss the areas for improvements, etc.
 
 Things will most likely change as we grow the team and feel the need to split the main team.
 
