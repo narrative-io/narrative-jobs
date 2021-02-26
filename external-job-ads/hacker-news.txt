@@ -1,0 +1,30 @@
+Narrative I/O | Scala/AWS/Spark Backend Engineer, VueJS Frontend Engineer| New York, NY | Full-time | ONSITE, REMOTE | http://narrative.io/
+
+Narrative is building a data streaming marketplace that makes it easy to buy, sell and win. 
+
+We do this by creating tools that reduce the friction and increase transparency in the data buying process, creating a win-win relationship between buyers and sellers.
+
+We are a small, early stage team looking for great developers who want to jump in and take major systems and user-facing features from design to launch.
+
+We are building the team with a remote-first mindset, and as a result every team member is expected to have an ability to synthesize business requirements, distill the domain, contribute to high-level design documents, efficiently communicate asynchronously, and more generally work autonomously toward a shared vision.
+
+While the company's headquarter is in NYC, the development team is currently made of engineers working from California (US), Québec (Canada), New Brunswick (Canada) and British Columbia (Canada).
+
+Our technical stack (Scala, AWS, Spark on the backend, VueJS on the frontend) looks like:
+
+- Our webapp frontend projects are written in Vuejs, Sass and Pug. We make use of modern and fuctional JavaScript patterns.
+
+- We sit somewhere in the middle of the “Scala as a worse Haskell” and “Scala as a better Java” spectrum. We love functional programming and we do make use of libraries like cats, cats-effect, http4s, doobie, but keep a pragmatic stance on purity and are also exposed to the AWS Java SDK/hadoop/spark ecosystems.
+
+- We are operating in Amazon Web Services. Our long-running services are deployed on EC2, Fargate, and Lambda and provisioned with Terraform. Our scheduled (spark) jobs are mostly executing on EMR and triggered by Jenkins Jobs.
+
+- We also heavily use other AWS technologies such as DynamoDB, S3, RDS, Step Functions and EMR.
+
+- Other services we use include: GitHub, Gitlab, Jenkins, DataDog, Crucible.
+
+- Being a small team, we think twice before rolling out custom infra that we need to monitor and maintain.
+
+Job postings and more on our team and culture: http://jobs.narrative.io/
+
+Apply by sending your resume to hiring-dev@narrative.io.
+

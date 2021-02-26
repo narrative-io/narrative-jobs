@@ -38,7 +38,7 @@ For detailed explanation on how things work, checkout [nuxt/content](https://con
 - [ ] Remove duplicated content on internal notion hiring process page
 - [ ] Deprecate transparency repo in favor of this one
 - [ ] Simplified offers with links to jobs.narrative.io
-  - [ ] Hacker news
+  - [x] Hacker news
   - [ ] LinkedIn
 - [ ] Deprecate transparency repo
     - [ ] Add workstation setup guide here

@@ -12,7 +12,7 @@ Here's where we are now:
 
 ## Frontend
 
-- Our webapp frontend projects are written in `Vuejs`, `Sass` and `Plug`. We make use of modern `JavaScript`
+- Our webapp frontend projects are written in `Vuejs`, `Sass` and `Pug`. We make use of modern `JavaScript`
 - We maintain a UI Library that is used in all of our frontend projects.
 - We rely heavily on functional `JavaScript` patterns. 
 
