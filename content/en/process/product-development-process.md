@@ -5,7 +5,7 @@ position: 10
 category: Process
 ---
 
-As mentioned in the [culture document](/about-us/culture#rules-and-processes), rules and processes do not exist for their own sake -- they are simply what we consider to be "best practices" and "good habits" for reinforcing the positive aspects of our team culture. 
+As mentioned in the [culture document](/about/culture#rules-and-processes), rules and processes do not exist for their own sake -- they are simply what we consider to be "best practices" and "good habits" for reinforcing the positive aspects of our team culture. 
 
 So we are regularly inspecting and iterating on our software development process to keep it relevant and useful.
 
@@ -41,7 +41,7 @@ a design document that gathers:
 The goal is to asynchronously seek feedback from the team before engaging in a major project and 
 define realistic expectations of what will be achievable in the short term.
 
-Read more on [design reviews](/about-us/day-in-life-dev#design-reviews)
+Read more on [design reviews](/about/day-in-life-dev#design-reviews)
 
 ## Ceremonies
 

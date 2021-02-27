@@ -1,1 +1,1 @@
-Read more about [our technical stack](/about-us/technical-stack)
+Read more about [our technical stack](/about/technical-stack)

@@ -8,7 +8,7 @@ category: 'About Us'
 ## Message from our CEO
 
 Although cliché, we feel that our company culture can be one of our biggest assets.  As we begin to grow the team we felt
-it important to have a document that would outline Narrative's [mission](/about-us/mission), [values](#core-values), process and procedures.  As Narrative is
+it important to have a document that would outline Narrative's [mission](/about/mission), [values](#core-values), process and procedures.  As Narrative is
 in its infancy, so is this document.  As the company grows so will this handbook.  It is intended to be a living
 document and we want all employees to contribute to its content, just like we want everyone at the company to contribute
 and help mold our culture.

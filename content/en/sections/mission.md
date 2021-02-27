@@ -1,1 +1,1 @@
-Read more about [our mission](/about-us/mission).
+Read more about [our mission](/about/mission).
