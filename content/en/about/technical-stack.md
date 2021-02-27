@@ -30,7 +30,8 @@ Here are some highlights of the major backend components:
 
 ## Ops
 - We are operating in `Amazon Web Services`.  Our long-running services are deployed on `EC2`, `Fargate`, and `Lambda` and provisioned with `Terraform`.
-  Our scheduled (spark) jobs are mostly executing on `EMR` and triggered by `Jenkins Jobs`.
+- We handle massive amounts of data: the miscellaneous S3 buckets we own contain in excess of 300TB of data.
+- Our scheduled (spark) jobs are mostly executing on `EMR` and triggered by `Jenkins Jobs`.
 - We also heavily use other AWS technologies such as `DynamoDB`, `S3`, `RDS`, `Step Functions` and `EMR`.
 - Other services we use include: `GitHub`, `Gitlab`, `Jenkins`, `DataDog`, `Crucible`.
 - Being a small team, we think twice before rolling out custom infra that we need to monitor and maintain. 
