@@ -29,7 +29,7 @@ the ways we do that will evolve over time  there are some core principles that w
 
 ## How we do it
 
-To realize this mission, we are currently creating a data streaming marketplace that makes it easy to buy, sell and win. 
+To realize this mission, we are building a data streaming marketplace that makes it easy to buy, sell and win. 
 
 We do this by creating tools that reduce the friction and increase transparency in the data buying process, creating
 a win-win relationship between buyers and sellers.
