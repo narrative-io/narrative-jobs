@@ -27,4 +27,3 @@ Our technical stack (Scala, AWS, Spark on the backend, VueJS on the frontend) lo
 Job postings and more on our team and culture: https://jobs.narrative.io/
 
 Apply by sending your resume to hiring-dev@narrative.io.
-
