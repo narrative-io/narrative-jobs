@@ -337,7 +337,7 @@ Used by the legacy frontend build
 brew install jq
 ```
 
-### Vue.js Devtools]
+### Vue.js Devtools
 
 [Vue.js devtools](https://github.com/vuejs/vue-devtools) is a great Chrome extension for debugging Vue Apps.
 
