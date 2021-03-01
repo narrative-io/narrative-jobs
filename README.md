@@ -31,8 +31,3 @@ yarn generate
 To preview the static generated app, run `yarn start`
 
 For detailed explanation on how things work, checkout [nuxt/content](https://content.nuxtjs.org) and [@nuxt/content theme docs](https://content.nuxtjs.org/themes-docs).
-
-## TODO
-- [ ] Fix favicon: nuxt loads the default nuxt icon, not the one we provided
-- [ ] Simplified offers with links to jobs.narrative.io
-  - [ ] LinkedIn
