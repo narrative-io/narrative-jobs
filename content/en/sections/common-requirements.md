@@ -1,4 +1,4 @@
-- Have strong experience using a version management system and continuous integeration (CI) development process. We use `Git`/`Github` for version management and `Gitlab` for our `CI` pipelines. 
+- Have strong experience using a version management system and continuous integration (CI) development process. We use `Git`/`Github` for version management and `Gitlab` for our `CI` pipelines. 
 - Have the ability to lead the creation of architectural and design documents,  
   collect requirements as well as feedback from the development and product teams and evalute new technologies as needed. 
 - Be able to transform product designs into coherent, working and robust code solutions. 
