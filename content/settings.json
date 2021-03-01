@@ -6,5 +6,6 @@
     "dark": "logo-dark.svg"
   },
   "github": "narrative-io/narrative-jobs",
-  "twitter": "@narrative_io"
+  "twitter": "@narrative_io",
+  "defaultDir": ""
 }
