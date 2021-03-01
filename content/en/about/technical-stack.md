@@ -35,3 +35,8 @@ Here are some highlights of the major backend components:
 - We also heavily use other AWS technologies such as `DynamoDB`, `S3`, `RDS`, `Step Functions` and `EMR`.
 - Other services we use include: `GitHub`, `Gitlab`, `Jenkins`, `DataDog`, `Crucible`.
 - Being a small team, we think twice before rolling out custom infra that we need to monitor and maintain. 
+
+## Workstation Setup Guide
+
+It is also worth taking a look at our [Dev Workstation Setup Guide](/process/dev-workstation-setup) which  
+gives more information on the tools that we work with.
