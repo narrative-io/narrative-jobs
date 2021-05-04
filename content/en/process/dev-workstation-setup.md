@@ -33,7 +33,7 @@ done
 EOF
 ```
 
-### bash-completion
+### bash-completion (Optional)
 
 [Programmable completion functions for bash](https://bash-completion.alioth.debian.org/)
 
@@ -102,7 +102,7 @@ asdf global terraform 0.14.7
 
 ```bash
 brew install docker docker-compose docker-machine-driver-xhyve
-brew cask install virtualbox
+brew install --cask virtualbox
 sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 ```
@@ -201,10 +201,12 @@ aws ec2 describe-instances
 aws s3 ls narrative-artifact-releases
 ```
 
-### Configure FoxyProxy] to access EMR UIs
+### Configure FoxyProxy to access EMR UIs (Optional)
 
 [FoxyProxy](https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp?hl=en) lets you use an SSH tunnel as a proxy to 
 browse the Hadoop/Spark EMR admin tools.
+
+FoxyProxy is optional because EMR now provides a UI
 
 - Browse to the [EMR console](https://console.aws.amazon.com/elasticmapreduce/home?region=us-east-1)
 - Click on any cluster
@@ -272,7 +274,7 @@ It is automatically used by the SBT builds. No need to manually configure it.
 ### IntelliJ CE
 
 ```bash
-brew cask install intellij-idea-ce
+brew install --cask intellij-idea-ce
 ```
 
 On first launch:
