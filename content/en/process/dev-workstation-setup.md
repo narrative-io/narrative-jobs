@@ -407,4 +407,4 @@ brew install jq
 
 ### Augury
 
-[Augury](https://augury.angular.io/) is a great Chrome extension for debugging Angular apps, which we use for the legacy frontend
+[Augury](https://augury.angular.io/) is a great Chrome extension for debugging Angular apps, which we use for the legacy frontend. [Install the chrome extension](https://chrome.google.com/webstore/detail/angular-devtools/ienfalfjdbdpebioblfackkekamfmbnh)
