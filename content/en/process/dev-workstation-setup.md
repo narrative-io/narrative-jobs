@@ -18,22 +18,48 @@ depend on having brew installed.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-### Setup ~/.bash_profile.d
+### Setup the configuration for your default shell
 
-The goal is to make it easier to customize environment variables by adding/overwriting files in the `~/.bash_profile.d`
-directory. Most setup instructions depend on all files in the `~/.bash_profile.d` directory to be
-automatically sourced when the shell is started
+Apple replaces bash with zsh as the default shell in macOS Catalina. To know which shell is your default shell execute the following command in a terminal
 
 ```bash
-mkdir -p ~/.bash_profile.d
+echo "$SHELL"
+```
+
+If you have the default ZSH shell (/bin/zsh), create the `.zshrc` as follow
+
+```bash
+cat > ~/.zshrc << 'EOF'
+setopt interactivecomments
+[[ -r $HOME/.profile ]] && source $HOME/.profile
+EOF
+```
+
+
+Otherwise, if you are still using `bash`(/bin/bash), run this instead to create the `.bash_profile`.
+
+```bash
 cat > ~/.bash_profile << 'EOF'
-for f in $(find $HOME/.bash_profile.d -type f | sort) ; do
+[[ -r $HOME/.profile ]] && source $HOME/.profile
+EOF
+```
+
+### Setup ~/.profile.d
+
+The goal is to make it easier to customize environment variables by adding/overwriting files in the `~/.profile.d`
+directory. Most setup instructions depend on all files in the `~/.profile.d` directory to be
+automatically sourced when the shell (zsh or bash) is started
+
+```bash
+mkdir -p ~/.profile.d
+cat > ~/.profile << 'EOF'
+for f in $(find $HOME/.profile.d -type f | sort) ; do
   source "$f"
 done
 EOF
 ```
 
-### bash-completion (Optional)
+### bash-completion if your default shell if `bash` (Optional)
 
 [Programmable completion functions for bash](https://bash-completion.alioth.debian.org/)
 
@@ -49,13 +75,42 @@ brew install bash-completion
 Enable
 
 ```bash
-cat  > ~/.bash_profile.d/bash_completion << 'EOF'
+cat  > ~/.profile.d/bash_completion << 'EOF'
 if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
 EOF
-source ~/.bash_profile.d/bash_completion
+source ~/.profile.d/bash_completion
 ```
+
+### zsh-completion if your default shell is `zsh` (Optional)
+
+
+Most commands (git, ...) provide advanced tab-completions to make your life easier.  To make use of this mechanism, it needs to be activated.
+
+Install
+
+```bash
+brew install zsh-completion
+```
+
+Enable
+
+```bash
+cat  > ~/.profile.d/zsh_completion << 'EOF'
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+EOF
+chmod go-w /usr/local/share
+chmod -R go-w '/usr/local/share/zsh'
+rm -f ~/.zcompdump; compinit
+source ~/.profile.d/zsh_completion
+```
+
 
 ### asdf-vm for Python, Ruby, NodeJS, Terraform
 
@@ -66,7 +121,7 @@ we depend on.
 
 ```bash
 brew install asdf
-echo "source $(brew --prefix asdf)/asdf.sh" > ~/.bash_profile.d/zzz_asdf
+echo "source $(brew --prefix asdf)/asdf.sh" > ~/.profile.d/zzz_asdf
 source $(brew --prefix asdf)/asdf.sh
 echo "legacy_version_file = yes" > ~/.asdfrc
 
@@ -142,8 +197,8 @@ Install hub
 
 ```bash
 brew install hub
-echo 'alias git=hub' > ~/.bash_profile.d/hub
-source ~/.bash_profile.d/hub
+echo 'alias git=hub' > ~/.profile.d/hub
+source ~/.profile.d/hub
 ```
 
 ### direnv
@@ -154,8 +209,8 @@ source ~/.bash_profile.d/hub
 ```bash
 brew install direnv
 # Load direnv after everything else has been loaded. In particular after `rbenv` and other shell extensions that manipulate the prompt
-echo 'eval "$(direnv hook bash)"' > ~/.bash_profile.d/zzz_direnv
-source ~/.bash_profile.d/zzz_direnv
+echo 'eval "$(direnv hook $SHELL)"' > ~/.profile.d/zzz_direnv
+source ~/.profile.d/zzz_direnv
 ```
 
 ## AWS Tools
