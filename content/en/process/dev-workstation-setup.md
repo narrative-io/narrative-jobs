@@ -15,7 +15,7 @@ This page describes how to setup a Mac OS X workstation to work on Narrative's p
 depend on having brew installed.
 
 ```bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 ### Setup ~/.bash_profile.d
