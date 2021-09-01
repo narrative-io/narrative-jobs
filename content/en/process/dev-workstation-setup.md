@@ -9,6 +9,12 @@ This page describes how to setup a Mac OS X workstation to work on Narrative's p
 
 ## Common System Tools
 
+### Xcode
+
+The Apple development tools takes quite a while (1hr) to download and it will be required later in the installation, so make sure you start the download first, then continue the installation instructions while it is downloading.
+
+Go to the `Apple` in the menu bar and select `App Store...`. In the search field (upper left side) type `XCode` then click on the `GET` button for XCode (Developer Tools).
+
 ### Homebrew
 
 [Homebrew](https://brew.sh/) is the de-facto package manager for Mac OS X. Most other setup instructions
@@ -162,8 +168,12 @@ Once it is installed, click on the `preferences` (gear icon on the top right) an
 
 [Git](https://git-scm.com/) is a distributed version control system
 
+NOTE: Xcode is required at this step, wait until XCode to run this. If it is not finished, you can run the other steps and come back to this one once it's finished.
+
+
 Install
 ```bash
+sudo xcodebuild -license accept
 brew install git
 ```
 
