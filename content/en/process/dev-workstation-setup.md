@@ -151,19 +151,12 @@ asdf install terraform 0.14.7
 asdf global terraform 0.14.7
 ```
 
-### Docker
+### Docker for desktop
 
-[Docker](https://www.docker.com/) is used for instance to run local PostgreSQL instances.
+[Docker for desktop](https://hub.docker.com/editions/community/docker-ce-desktop-mac) is used to run local PostgreSQL instances. 
 
-```bash
-brew install docker docker-compose docker-machine-driver-xhyve
-brew install --cask virtualbox
-sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-```
-
-PS: docker-machine is now in [maintenance mode](https://github.com/docker/machine/issues/4537), so we need to migrate
-to [Docker Desktop](https://www.docker.com/products/docker-desktop) at some point.
+[Click here to download the DMG](https://desktop.docker.com/mac/stable/amd64/Docker.dmg) and install it.
+Once it is installed, click on the `preferences` (gear icon on the top right) and check the `Start Docker Desktop when you log in` in the general section. Then click on the Resources/Advanced and make sure you have 4 CPU and 8 Gig of memory. Click on the `Apply & restart` button on the bottom right.
 
 ### Git
 
