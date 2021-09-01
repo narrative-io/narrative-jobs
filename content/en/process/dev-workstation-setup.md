@@ -295,7 +295,14 @@ the main tools needed for backend development.
 
 ```bash
 brew install openjdk
+
+cat  > ~/.profile.d/openjdk << 'EOF'
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+EOF
+source ~/.profile.d/openjdk
 ```
+
 
 ### sbt
 
