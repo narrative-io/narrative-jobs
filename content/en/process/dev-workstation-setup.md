@@ -32,23 +32,30 @@ Apple replaces bash with zsh as the default shell in macOS Catalina. To know whi
 echo "$SHELL"
 ```
 
-If you have the default ZSH shell (/bin/zsh), create the `.zshrc` as follow
+Run the instructions for your default shell.
 
-```bash
-cat > ~/.zshrc << 'EOF'
-setopt interactivecomments
-[[ -r $HOME/.profile ]] && source $HOME/.profile
-EOF
-```
+<base-code-group>
+  <base-code-block label="zsh" active>
+  
+  ```bash
+  cat > ~/.zshrc << 'EOF'
+  setopt interactivecomments
+  [[ -r $HOME/.profile ]] && source $HOME/.profile
+  EOF
+  ```
+  
+  </base-code-block>
+  <base-code-block label="bash">
+  
+  ```bash
+  cat > ~/.bash_profile << 'EOF'
+  [[ -r $HOME/.profile ]] && source $HOME/.profile
+  EOF
+  ```
+  
+  </base-code-block>
+</base-code-group>
 
-
-Otherwise, if you are still using `bash`(/bin/bash), run this instead to create the `.bash_profile`.
-
-```bash
-cat > ~/.bash_profile << 'EOF'
-[[ -r $HOME/.profile ]] && source $HOME/.profile
-EOF
-```
 
 ### Setup ~/.profile.d
 
@@ -65,58 +72,53 @@ done
 EOF
 ```
 
-### bash-completion if your default shell if `bash` (Optional)
-
-[Programmable completion functions for bash](https://bash-completion.alioth.debian.org/)
+### Shell completion  (Optional)
 
 Most commands (git, ...) provide advanced tab-completions to make your life easier.  To make use of this mechanism, it needs to be
 activated.
 
-Install
-
-```bash
-brew install bash-completion
-```
-
-Enable
-
-```bash
-cat  > ~/.profile.d/bash_completion << 'EOF'
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-fi
-EOF
-source ~/.profile.d/bash_completion
-```
-
-### zsh-completion if your default shell is `zsh` (Optional)
+[Programmable completion functions for bash](https://bash-completion.alioth.debian.org/)
 
 
-Most commands (git, ...) provide advanced tab-completions to make your life easier.  To make use of this mechanism, it needs to be activated.
+<base-code-group>
+  <base-code-block label="zsh" active>
+  
+  ```bash
+  brew install zsh-completion
 
-Install
+  cat  > ~/.profile.d/zsh_completion << 'EOF'
+  if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
-```bash
-brew install zsh-completion
-```
+    autoload -Uz compinit
+    compinit
+  fi
+  EOF
 
-Enable
+  chmod go-w /usr/local/share
+  chmod -R go-w '/usr/local/share/zsh'
+  rm -f ~/.zcompdump; compinit
+  
+  source ~/.profile.d/zsh_completion
+  ```
+  
+  </base-code-block>
+  <base-code-block label="bash">
 
-```bash
-cat  > ~/.profile.d/zsh_completion << 'EOF'
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  ```bash
+  brew install bash-completion
 
-  autoload -Uz compinit
-  compinit
-fi
-EOF
-chmod go-w /usr/local/share
-chmod -R go-w '/usr/local/share/zsh'
-rm -f ~/.zcompdump; compinit
-source ~/.profile.d/zsh_completion
-```
+  cat  > ~/.profile.d/bash_completion << 'EOF'
+  if [ -f `brew --prefix`/etc/bash_completion ]; then
+      . `brew --prefix`/etc/bash_completion
+  fi
+  EOF
 
+  source ~/.profile.d/bash_completion
+  ```
+  
+  </base-code-block>
+</base-code-group>
 
 ### asdf-vm for Python, Ruby, NodeJS, Terraform
 
