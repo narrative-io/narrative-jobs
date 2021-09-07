@@ -298,16 +298,47 @@ the main tools needed for backend development.
 
 ### Java SDK
 
-```bash
-brew install openjdk
+<base-code-group>
+  <base-code-block label="Homebrew" active>
+  
+  ```bash
+  brew install openjdk
 
-cat  > ~/.profile.d/openjdk << 'EOF'
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
-export CPPFLAGS="-I/usr/local/opt/openjdk/include"
-EOF
-source ~/.profile.d/openjdk
-```
+  cat  > ~/.profile.d/openjdk << 'EOF'
+  export PATH="/usr/local/opt/openjdk/bin:$PATH"
+  export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+  EOF
+  source ~/.profile.d/openjdk
+  ```
+  
+  </base-code-block>
+  <base-code-block label="Coursier">
+  
+  ```bash
+  brew install coursier/formulas/coursier
 
+  cat  > ~/.profile.d/coursier << 'EOF'
+  fpath=(~/.zsh/completion $fpath)
+  autoload -Uz compinit ; compinit
+  EOF
+  source ~/.profile.d/coursier
+  coursier
+  coursier setup
+  ```
+  
+  </base-code-block>
+  <base-code-block label="SDKMAN">
+  
+  ```bash
+  curl -s "https://get.sdkman.io" | bash
+  cat  > ~/.profile.d/sdkman << 'EOF'
+  source "$HOME/.sdkman/bin/sdkman-init.sh"
+  EOF
+  source ~/.profile.d/sdkman
+  ```
+  
+  </base-code-block>
+</base-code-group>
 
 ### sbt
 
@@ -315,17 +346,58 @@ source ~/.profile.d/openjdk
 
 Install
 
-```bash
-brew install sbt
-```
+<base-code-group>
+  <base-code-block label="Homebrew" active>
+
+  ```bash
+  brew install sbt
+  ```
+  </base-code-block>
+  <base-code-block label="Coursier">
+  
+  ```bash
+  coursier install sbt
+  ```
+  
+  </base-code-block>
+  <base-code-block label="SDKMAN">
+  
+  ```bash
+  sdk install sbt
+  ```
+  
+  </base-code-block>
+</base-code-group>
+
 
 ### Scala Console
 
 The Scala Console REPL is included in the scala toolchain.
 
-```bash
-brew install scala
-```
+<base-code-group>
+  <base-code-block label="Homebrew" active>
+  
+  ```bash
+  brew install scala
+  ```
+
+  </base-code-block>
+  <base-code-block label="Coursier">
+  
+  ```bash
+  coursier install scala
+  ```
+  
+  </base-code-block>
+  <base-code-block label="SDKMAN">
+  
+  ```bash
+  sdk install scala
+  ```
+  
+  </base-code-block>
+</base-code-group>
+
 
 ### Coursier
 
