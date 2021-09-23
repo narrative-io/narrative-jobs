@@ -9,53 +9,116 @@ This page describes how to setup a Mac OS X workstation to work on Narrative's p
 
 ## Common System Tools
 
+### Xcode
+
+The Apple development tools takes quite a while (1hr) to download and it will be required later in the installation, so make sure you start the download first, then continue the installation instructions while it is downloading.
+
+Go to the `Apple` in the menu bar and select `App Store...`. In the search field (upper left side) type `XCode` then click on the `GET` button for XCode (Developer Tools).
+
 ### Homebrew
 
 [Homebrew](https://brew.sh/) is the de-facto package manager for Mac OS X. Most other setup instructions
 depend on having brew installed.
 
 ```bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-### Setup ~/.bash_profile.d
+### Setup the configuration for your default shell
 
-The goal is to make it easier to customize environment variables by adding/overwriting files in the `~/.bash_profile.d`
-directory. Most setup instructions depend on all files in the `~/.bash_profile.d` directory to be
-automatically sourced when the shell is started
+Apple replaces bash with zsh as the default shell in macOS Catalina. To know which shell is your default shell execute the following command in a terminal
 
 ```bash
-mkdir -p ~/.bash_profile.d
-cat > ~/.bash_profile << 'EOF'
-for f in $(find $HOME/.bash_profile.d -type f | sort) ; do
+echo "$SHELL"
+```
+
+Run the instructions for your default shell.
+
+<base-code-group>
+  <base-code-block label="zsh" active>
+  
+  ```bash
+  cat > ~/.zshrc << 'EOF'
+  setopt interactivecomments
+  [[ -r $HOME/.profile ]] && source $HOME/.profile
+  EOF
+  ```
+  
+  </base-code-block>
+  <base-code-block label="bash">
+  
+  ```bash
+  cat > ~/.bash_profile << 'EOF'
+  [[ -r $HOME/.profile ]] && source $HOME/.profile
+  EOF
+  ```
+  
+  </base-code-block>
+</base-code-group>
+
+
+### Setup ~/.profile.d
+
+The goal is to make it easier to customize environment variables by adding/overwriting files in the `~/.profile.d`
+directory. Most setup instructions depend on all files in the `~/.profile.d` directory to be
+automatically sourced when the shell (zsh or bash) is started
+
+```bash
+mkdir -p ~/.profile.d
+cat > ~/.profile << 'EOF'
+for f in $(find $HOME/.profile.d -type f | sort) ; do
   source "$f"
 done
 EOF
 ```
 
-### bash-completion (Optional)
-
-[Programmable completion functions for bash](https://bash-completion.alioth.debian.org/)
+### Shell completion  (Optional)
 
 Most commands (git, ...) provide advanced tab-completions to make your life easier.  To make use of this mechanism, it needs to be
 activated.
 
-Install
+[Programmable completion functions for bash](https://bash-completion.alioth.debian.org/)
 
-```bash
-brew install bash-completion
-```
 
-Enable
+<base-code-group>
+  <base-code-block label="zsh" active>
+  
+  ```bash
+  brew install zsh-completion
 
-```bash
-cat  > ~/.bash_profile.d/bash_completion << 'EOF'
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-fi
-EOF
-source ~/.bash_profile.d/bash_completion
-```
+  cat  > ~/.profile.d/zsh_completion << 'EOF'
+  if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+  fi
+  EOF
+
+  chmod go-w /usr/local/share
+  chmod -R go-w '/usr/local/share/zsh'
+  rm -f ~/.zcompdump; compinit
+  
+  source ~/.profile.d/zsh_completion
+  ```
+  
+  </base-code-block>
+  <base-code-block label="bash">
+
+  ```bash
+  brew install bash-completion
+
+  cat  > ~/.profile.d/bash_completion << 'EOF'
+  if [ -f `brew --prefix`/etc/bash_completion ]; then
+      . `brew --prefix`/etc/bash_completion
+  fi
+  EOF
+
+  source ~/.profile.d/bash_completion
+  ```
+  
+  </base-code-block>
+</base-code-group>
 
 ### asdf-vm for Python, Ruby, NodeJS, Terraform
 
@@ -66,7 +129,7 @@ we depend on.
 
 ```bash
 brew install asdf
-echo "source $(brew --prefix asdf)/asdf.sh" > ~/.bash_profile.d/zzz_asdf
+echo "source $(brew --prefix asdf)/asdf.sh" > ~/.profile.d/zzz_asdf
 source $(brew --prefix asdf)/asdf.sh
 echo "legacy_version_file = yes" > ~/.asdfrc
 
@@ -96,26 +159,23 @@ asdf install terraform 0.14.7
 asdf global terraform 0.14.7
 ```
 
-### Docker
+### Docker for desktop
 
-[Docker](https://www.docker.com/) is used for instance to run local PostgreSQL instances.
+[Docker for desktop](https://hub.docker.com/editions/community/docker-ce-desktop-mac) is used to run local PostgreSQL instances. 
 
-```bash
-brew install docker docker-compose docker-machine-driver-xhyve
-brew install --cask virtualbox
-sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-```
-
-PS: docker-machine is now in [maintenance mode](https://github.com/docker/machine/issues/4537), so we need to migrate
-to [Docker Desktop](https://www.docker.com/products/docker-desktop) at some point.
+[Click here to download the DMG](https://desktop.docker.com/mac/stable/amd64/Docker.dmg) and install it.
+Once it is installed, click on the `preferences` (gear icon on the top right) and check the `Start Docker Desktop when you log in` in the general section. Then click on the Resources/Advanced and make sure you have 4 CPU and 8 Gig of memory. Click on the `Apply & restart` button on the bottom right.
 
 ### Git
 
 [Git](https://git-scm.com/) is a distributed version control system
 
+NOTE: Xcode is required at this step, wait until XCode to run this. If it is not finished, you can run the other steps and come back to this one once it's finished.
+
+
 Install
 ```bash
+sudo xcodebuild -license accept
 brew install git
 ```
 
@@ -142,8 +202,8 @@ Install hub
 
 ```bash
 brew install hub
-echo 'alias git=hub' > ~/.bash_profile.d/hub
-source ~/.bash_profile.d/hub
+echo 'alias git=hub' > ~/.profile.d/hub
+source ~/.profile.d/hub
 ```
 
 ### direnv
@@ -154,8 +214,8 @@ source ~/.bash_profile.d/hub
 ```bash
 brew install direnv
 # Load direnv after everything else has been loaded. In particular after `rbenv` and other shell extensions that manipulate the prompt
-echo 'eval "$(direnv hook bash)"' > ~/.bash_profile.d/zzz_direnv
-source ~/.bash_profile.d/zzz_direnv
+echo 'eval "$(direnv hook $SHELL)"' > ~/.profile.d/zzz_direnv
+source ~/.profile.d/zzz_direnv
 ```
 
 ## AWS Tools
@@ -238,9 +298,51 @@ the main tools needed for backend development.
 
 ### Java SDK
 
-```bash
-brew install openjdk
-```
+<base-code-group>
+  <base-code-block label="Homebrew">
+  
+  ```bash
+  brew install openjdk
+
+  cat  > ~/.profile.d/openjdk << 'EOF'
+  export PATH="/usr/local/opt/openjdk/bin:$PATH"
+  export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+  EOF
+  source ~/.profile.d/openjdk
+  ```
+  
+  </base-code-block>
+  <base-code-block label="Coursier" active>
+  
+  ```bash
+  brew install coursier/formulas/coursier
+  coursier
+  cs java --jvm 8
+
+  cat  > ~/.profile.d/coursier << 'EOF'
+  fpath=(~/.zsh/completion $fpath)
+  autoload -Uz compinit ; compinit
+  export PATH="$PATH:/Users/henri/Library/Application Support/Coursier/bin"
+  eval "$(cs java --jvm 8 --env)"
+  EOF
+  
+  source ~/.profile.d/coursier
+
+  ```
+  
+  </base-code-block>
+  <base-code-block label="SDKMAN">
+  
+  ```bash
+  curl -s "https://get.sdkman.io" | bash
+  cat  > ~/.profile.d/sdkman << 'EOF'
+  source "$HOME/.sdkman/bin/sdkman-init.sh"
+  EOF
+  source ~/.profile.d/sdkman
+  ```
+  
+  </base-code-block>
+</base-code-group>
 
 ### sbt
 
@@ -248,17 +350,58 @@ brew install openjdk
 
 Install
 
-```bash
-brew install sbt
-```
+<base-code-group>
+  <base-code-block label="Homebrew">
+
+  ```bash
+  brew install sbt
+  ```
+  </base-code-block>
+  <base-code-block label="Coursier" active>
+  
+  ```bash
+  cs install sbt
+  ```
+  
+  </base-code-block>
+  <base-code-block label="SDKMAN">
+  
+  ```bash
+  sdk install sbt
+  ```
+  
+  </base-code-block>
+</base-code-group>
+
 
 ### Scala Console
 
 The Scala Console REPL is included in the scala toolchain.
 
-```bash
-brew install scala
-```
+<base-code-group>
+  <base-code-block label="Homebrew">
+  
+  ```bash
+  brew install scala
+  ```
+
+  </base-code-block>
+  <base-code-block label="Coursier" active>
+  
+  ```bash
+  cs install scala
+  ```
+  
+  </base-code-block>
+  <base-code-block label="SDKMAN">
+  
+  ```bash
+  sdk install scala
+  ```
+  
+  </base-code-block>
+</base-code-group>
+
 
 ### Coursier
 
@@ -345,4 +488,4 @@ brew install jq
 
 ### Augury
 
-[Augury](https://augury.angular.io/) is a great Chrome extension for debugging Angular apps, which we use for the legacy frontend
+[Augury](https://augury.angular.io/) is a great Chrome extension for debugging Angular apps, which we use for the legacy frontend. [Install the chrome extension](https://chrome.google.com/webstore/detail/angular-devtools/ienfalfjdbdpebioblfackkekamfmbnh)
