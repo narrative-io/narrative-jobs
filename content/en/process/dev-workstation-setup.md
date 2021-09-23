@@ -299,7 +299,7 @@ the main tools needed for backend development.
 ### Java SDK
 
 <base-code-group>
-  <base-code-block label="Homebrew" active>
+  <base-code-block label="Homebrew">
   
   ```bash
   brew install openjdk
@@ -312,18 +312,22 @@ the main tools needed for backend development.
   ```
   
   </base-code-block>
-  <base-code-block label="Coursier">
+  <base-code-block label="Coursier" active>
   
   ```bash
   brew install coursier/formulas/coursier
+  coursier
+  cs java --jvm 8
 
   cat  > ~/.profile.d/coursier << 'EOF'
   fpath=(~/.zsh/completion $fpath)
   autoload -Uz compinit ; compinit
+  export PATH="$PATH:/Users/henri/Library/Application Support/Coursier/bin"
+  eval "$(cs java --jvm 8 --env)"
   EOF
+  
   source ~/.profile.d/coursier
-  coursier
-  coursier setup
+
   ```
   
   </base-code-block>
@@ -347,16 +351,16 @@ the main tools needed for backend development.
 Install
 
 <base-code-group>
-  <base-code-block label="Homebrew" active>
+  <base-code-block label="Homebrew">
 
   ```bash
   brew install sbt
   ```
   </base-code-block>
-  <base-code-block label="Coursier">
+  <base-code-block label="Coursier" active>
   
   ```bash
-  coursier install sbt
+  cs install sbt
   ```
   
   </base-code-block>
@@ -375,17 +379,17 @@ Install
 The Scala Console REPL is included in the scala toolchain.
 
 <base-code-group>
-  <base-code-block label="Homebrew" active>
+  <base-code-block label="Homebrew">
   
   ```bash
   brew install scala
   ```
 
   </base-code-block>
-  <base-code-block label="Coursier">
+  <base-code-block label="Coursier" active>
   
   ```bash
-  coursier install scala
+  cs install scala
   ```
   
   </base-code-block>
