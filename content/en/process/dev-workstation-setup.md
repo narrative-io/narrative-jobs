@@ -5,7 +5,7 @@ position: 12
 category: Process
 ---
 
-This page describes how to setup a Mac OS X workstation to work on Narrative's projects. 
+This page describes how to setup a Mac OS X workstation to work on Narrative's projects.
 
 ## Common System Tools
 
@@ -36,23 +36,23 @@ Run the instructions for your default shell.
 
 <base-code-group>
   <base-code-block label="zsh" active>
-  
+
   ```bash
   cat > ~/.zshrc << 'EOF'
   setopt interactivecomments
   [[ -r $HOME/.profile ]] && source $HOME/.profile
   EOF
   ```
-  
+
   </base-code-block>
   <base-code-block label="bash">
-  
+
   ```bash
   cat > ~/.bash_profile << 'EOF'
   [[ -r $HOME/.profile ]] && source $HOME/.profile
   EOF
   ```
-  
+
   </base-code-block>
 </base-code-group>
 
@@ -82,7 +82,7 @@ activated.
 
 <base-code-group>
   <base-code-block label="zsh" active>
-  
+
   ```bash
   brew install zsh-completion
 
@@ -98,10 +98,10 @@ activated.
   chmod go-w /usr/local/share
   chmod -R go-w '/usr/local/share/zsh'
   rm -f ~/.zcompdump; compinit
-  
+
   source ~/.profile.d/zsh_completion
   ```
-  
+
   </base-code-block>
   <base-code-block label="bash">
 
@@ -116,7 +116,7 @@ activated.
 
   source ~/.profile.d/bash_completion
   ```
-  
+
   </base-code-block>
 </base-code-group>
 
@@ -154,14 +154,14 @@ asdf global nodejs 14.16.0
 # Install terraform
 asdf plugin-add terraform https://github.com/Banno/asdf-hashicorp.git
 # some projects still depend on v0.12, but we are migrating to v0.14
-asdf install terraform 0.12.30 
+asdf install terraform 0.12.30
 asdf install terraform 0.14.7
 asdf global terraform 0.14.7
 ```
 
 ### Docker for desktop
 
-[Docker for desktop](https://hub.docker.com/editions/community/docker-ce-desktop-mac) is used to run local PostgreSQL instances. 
+[Docker for desktop](https://hub.docker.com/editions/community/docker-ce-desktop-mac) is used to run local PostgreSQL instances.
 
 [Click here to download the DMG](https://desktop.docker.com/mac/stable/amd64/Docker.dmg) and install it.
 Once it is installed, click on the `preferences` (gear icon on the top right) and check the `Start Docker Desktop when you log in` in the general section. Then click on the Resources/Advanced and make sure you have 4 CPU and 8 Gig of memory. Click on the `Apply & restart` button on the bottom right.
@@ -263,7 +263,7 @@ aws s3 ls narrative-artifact-releases
 
 ### Configure FoxyProxy to access EMR UIs (Optional)
 
-[FoxyProxy](https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp?hl=en) lets you use an SSH tunnel as a proxy to 
+[FoxyProxy](https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp?hl=en) lets you use an SSH tunnel as a proxy to
 browse the Hadoop/Spark EMR admin tools.
 
 FoxyProxy is optional because EMR now provides a UI
@@ -300,20 +300,15 @@ the main tools needed for backend development.
 
 <base-code-group>
   <base-code-block label="Homebrew">
-  
-  ```bash
-  brew install openjdk
 
-  cat  > ~/.profile.d/openjdk << 'EOF'
-  export PATH="/usr/local/opt/openjdk/bin:$PATH"
-  export CPPFLAGS="-I/usr/local/opt/openjdk/include"
-  EOF
-  source ~/.profile.d/openjdk
+  ```bash
+  brew tap adoptopenjdk/openjdk
+  brew install --cask adoptopenjdk8
   ```
-  
+
   </base-code-block>
   <base-code-block label="Coursier" active>
-  
+
   ```bash
   brew install coursier/formulas/coursier
   coursier
@@ -325,14 +320,14 @@ the main tools needed for backend development.
   export PATH="$PATH:/Users/henri/Library/Application Support/Coursier/bin"
   eval "$(cs java --jvm 8 --env)"
   EOF
-  
+
   source ~/.profile.d/coursier
 
   ```
-  
+
   </base-code-block>
   <base-code-block label="SDKMAN">
-  
+
   ```bash
   curl -s "https://get.sdkman.io" | bash
   cat  > ~/.profile.d/sdkman << 'EOF'
@@ -340,7 +335,7 @@ the main tools needed for backend development.
   EOF
   source ~/.profile.d/sdkman
   ```
-  
+
   </base-code-block>
 </base-code-group>
 
@@ -358,18 +353,18 @@ Install
   ```
   </base-code-block>
   <base-code-block label="Coursier" active>
-  
+
   ```bash
   cs install sbt
   ```
-  
+
   </base-code-block>
   <base-code-block label="SDKMAN">
-  
+
   ```bash
   sdk install sbt
   ```
-  
+
   </base-code-block>
 </base-code-group>
 
@@ -380,25 +375,25 @@ The Scala Console REPL is included in the scala toolchain.
 
 <base-code-group>
   <base-code-block label="Homebrew">
-  
+
   ```bash
   brew install scala
   ```
 
   </base-code-block>
   <base-code-block label="Coursier" active>
-  
+
   ```bash
   cs install scala
   ```
-  
+
   </base-code-block>
   <base-code-block label="SDKMAN">
-  
+
   ```bash
   sdk install scala
   ```
-  
+
   </base-code-block>
 </base-code-group>
 
