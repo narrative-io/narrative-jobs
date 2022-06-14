@@ -1,6 +1,6 @@
 ---
-title: Scala/AWS/Spark Backend Engineer (Remote)
-description: Come help us tighten up our back end.  Not in the gym sort of way, but in the engineering / development sort of way.
+title: Senior Backend Engineer (Remote)
+description: Come help us tighten up our back end. Not in the gym sort of way, but in the engineering / development sort of way.
 position: 2
 category: Open Positions
 ---
