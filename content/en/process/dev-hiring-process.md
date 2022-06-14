@@ -85,7 +85,3 @@ Assuming the take-home meets our basic requirements, we should invite the candid
 At this point, we should be about 80% sure of the candidate's technical ability. For the tech portion of the follow-up, we can raise any questions we had about the candidate's design choices in the exercise, as well as potential extension questions like "what would you do if we wanted to change these fields on the form" or "how would this system need to change to enable reports grouped by hour".
 
 The technical follow-up is the opportunity to challenge the candidate on his/her design and architectural choices, and figure out whether (s)he understand the ops/scaling/naintainability/etc consequences of these choices.
-
-### Chat and lunch
-
-Get to know the candidate as a person, buy them lunch, make sure everyone gets along and we have culture fit, etc. Probably the most subjective part; I have no ideas for canned questions to use here.
