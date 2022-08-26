@@ -20,11 +20,15 @@ Hiring criteria for developers boils down to two things:
 
 ## Interview Process
 
-The proposed interview process will be in roughly 3 stages: 1) phone screen / coffee, 2) take-home assignment, 3) longer in-person.
+The interview consists of three stages:
+
+1. A phone screen.
+2. A take-home assignment.
+3. A follow-up with the team.
 
 ### Resume Review
 
-Before we even commit to a phone screen / coffee, we should review the incoming resume to make sure it’s worth the time on both sides of the table. While we’re not excluding based on exact technologies / experience, it is pretty safe to say that e.g. someone who’s spent the last 10 years on-site at a large corporation mechanically pulling tickets from a queue may not be a great fit for what we’re currently seeking.
+Before we even commit to a phone screen , we should review the incoming resume to make sure it’s worth the time on both sides of the table. While we’re not excluding based on exact technologies / experience, it is pretty safe to say that e.g. someone who’s spent the last 10 years on-site at a large corporation mechanically pulling tickets from a queue may not be a great fit for what we’re currently seeking.
 
 As such, we should go over the following criteria when reviewing resumes (usual caveat about exceptions):
 
@@ -37,7 +41,7 @@ As such, we should go over the following criteria when reviewing resumes (usual 
 
 (100% fit for the above is unrealistic, but anything under, say, 60% should probably be a red flag)
 
-### Phone Screen / Coffee
+### Phone Screen
 
 The purpose of the first stage is to validate the cultural fit and answer the candidate's questions about the company, the work environment, etc . As such, the goal should be a quick chat, ~30-45 min.
 
@@ -57,13 +61,9 @@ Useful lines of conversation
     2. ^ Anything they can’t get at their current employer (if applicable)?
     3. Again, any coherent opinion is better than none here; are they moving for a well-thought-out reason, or will just any job do?
 
-#### Note of "fizzbuzz"
-
-Conventionally, phone screens involve a “fizzbuzz” type question over some sort of remote shared text editor like titanpad, etc, as a quick screen before on-sites. In our case we think that this is redundant, because the next stage (take-home exercise) is fairly low effort on our side so there is no effort saved by the extra screen. On the skill evaluation front, everyone has memorized "fizzbuzz" variants by now. If the candidate can’t write basic code, it will be immediately obvious from their submission anyway.
-
 ### Take-home Exercise
 
-The take-home exercise is a more involved judgment of technical ability. The specific prompt will vary, but the exercise should:
+The take-home exercise is a more involved judgment of technical ability. The specific prompt will vary, but the exercise will:
 
 - Be completable within < 4-6 hours. Basically we want equivalent or less time/effort investment when compared to a traditional in-person interview -- we want to be respectful to the candidate and not have them effectively give away days of free work.
 - Be completable using the tool chain of the candidate's choice.
