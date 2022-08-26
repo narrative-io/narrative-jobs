@@ -5,8 +5,8 @@ position: 9
 category: Process
 ---
 
-The goal of the hiring process is to give the opportunity on both sides to assess the fit. It is as much an opportunity for the candidate to decide whether (s)he wants
-to work with us as it is for us to decide whether the person would be a great addition to the team.
+The goal of the hiring process is to give the opportunity to both sides to assess the fit. It is as much an opportunity for the candidate to decide whether they want
+to work with us as it is for us to decide whether they would be a great addition to the team.
 
 ## Hiring Criteria
 
@@ -84,4 +84,4 @@ Assuming the take-home meets our basic requirements, we should invite the candid
 
 At this point, we should be about 80% sure of the candidate's technical ability. For the tech portion of the follow-up, we can raise any questions we had about the candidate's design choices in the exercise, as well as potential extension questions like "what would you do if we wanted to change these fields on the form" or "how would this system need to change to enable reports grouped by hour".
 
-The technical follow-up is the opportunity to challenge the candidate on his/her design and architectural choices, and figure out whether (s)he understand the ops/scaling/naintainability/etc consequences of these choices.
+The technical follow-up is the opportunity to challenge the candidate on their design and architectural choices, and figure out whether they understand the ops/scaling/naintainability/etc consequences of these choices.
