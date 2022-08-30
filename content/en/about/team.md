@@ -14,5 +14,5 @@ We are building the team with a remote-first mindset, and as a result every team
 to synthesize business requirements, distill the domain, contribute to high-level design documents, efficiently
 communicate asynchronously, and more generally work autonomously toward a shared vision.
 
-While the company's headquarter is in NYC, the development team is currently made of engineers working from California (US), Québec (Canada), 
-New Brunswick (Canada) and British Columbia (Canada).
+While the company's headquarter is in NYC, the development team is currently made of engineers working from the US (California),
+Canada (Alberta, British Columbia, and Québec), and Germany.
