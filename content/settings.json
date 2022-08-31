@@ -2,8 +2,8 @@
   "title": "Narrative Jobs",
   "url": "https://jobs.narrative.io",
   "logo": {
-    "light": "logo-light.svg",
-    "dark": "logo-dark.svg"
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
   },
   "github": "narrative-io/narrative-jobs",
   "twitter": "@narrative_io",
