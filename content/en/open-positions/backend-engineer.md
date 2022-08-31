@@ -1,22 +1,31 @@
 ---
 title: Senior Backend Engineer (Remote)
-description: Come help us tighten up our back end. Not in the gym sort of way, but in the engineering / development sort of way.
 position: 2
 category: Open Positions
 ---
 
 ## What You Will Do
 
-We currently have a marketplace that connects buyers and sellers of adtech data, and we are building on this success 
-to make it possible to transact any other kinds of data.
+We have built a marketplace that allows buyers and sellers to transact any kind of data.
 
-As a result, here are the kinds of projects you will likely work on in the foreseable future:
-- Make our core systems generic/agnostic to the actual data types that are being ingested, transacted and delivered. 
-  For instance, we are building Iceberg-backed data puddles, schema/validation tools, making the transaction process more generic, etc.
-- Improve the monitoring and reliability of our systems with the ever-increasing amount of data being handled (over 500GB per day)
-- Extract abstractions, modularize the code and improve the tests.
-- Enhance the API we expose to partners and increasingly rely on it for internal use, in order to "eat our own dogfood".
+Here are the kinds of projects you will likely work on:
 
+- Add capabilities to our query execution and data classification engines to make it possible to fulfill any buyer
+  query.
+- Iterate on our forecasting system so that buyers get faster, more accurate insights into the volume and quality of
+  data they are purchasing.
+- Build out additional connectors to make it effortless to get data into and out of our marketplace.
+- Design a framework for metering resource usage (e.g. storage, server hours, API calls) by partner and integrating it
+  into billing.
+- Improve query planning, optimization, and batching to make sure our transaction jobs are running efficiently.
+- Help buyers and sellers build complex data workflows on the platform. E.g. enabling buyers use the output of one
+  of their purchases as a filter to another
+- Automate table maintenance tasks like file compaction, data retention, choosing partitioning and sort strategies based
+  on statistics gathered about a dataset and historical query patterns, etc.
+- Architect service interfaces and composable subsystems as we scale the team and decompose our monolith.
+- Improve the monitoring and reliability of our systems with the ever-increasing amount of data being handled: currently
+  we're ingesting > 10 TB of data from sellers every day.
+- Extract abstractions, modularize the code, and improve tests.
 
 ## Technical Stack
 
@@ -24,22 +33,21 @@ As a result, here are the kinds of projects you will likely work on in the fores
 
 ## The Ideal Candidate
 
-We are not looking for a 100% fit on all the technology buzzwords, but we are looking for someone with strong personal and technical
-skills who is eager to pick up new technologies as necessary. We are obviously going to expect much more from a senior candidate than we 
-would from a junior one.
+We are not looking for a 100% fit on all the technology buzzwords, but we are looking for someone with strong personal
+and technical skills who is eager to pick up new technologies as necessary.
 
 The ideal candidate should:
-- Have experience in a typed functional language such as Scala, F# or Haskell, or significant experience in their non-functional
-  equivalents (Java, C#) with an interest in Scala and Functional Programming.
-- Have experience working with non-trivial quantities of data.  As of this writing, our ingestion pipelines are handling
-  something on the order of 500GB .snappy.parquet files per day.  Prior work with Spark would be ideal, but experience
-  with similar MapReduce-based technologies would also be helpful.
-- Have experience operating in a cloud environment like Amazon Web Services, Google Compute Engine, or similar.
-- Be able to work across all aspects of back end systems, from application code to SQL to systems administration.
-- Not be afraid of contributing to the entire stack (from the UI to Devops) when the need arises.
-<common-section section-name="common-requirements"></common-section>
 
-## The Team (Remote US and Canada)
+- Have experience in a typed functional language such as Scala, F#, or Haskell, or significant experience in their
+  non-functional equivalents (Java, C#) with an interest in Scala and Functional Programming.
+- Have experience working with non-trivial quantities of data. Prior experience with Spark would be ideal, but
+  experience with any distributed query engine (Trino, Dremio, etc.) would also be helpful.
+- Have experience operating in a cloud environment like Amazon Web Services, Google Compute Engine, or similar.
+- Be able to work across all aspects of backend systems, from application code to SQL to systems administration.
+- Not be afraid of contributing to the entire stack (from the UI to Devops) when the need arises.
+  <common-section section-name="common-requirements"></common-section>
+
+## The Team
 
 <common-section section-name="team"></common-section>
 
