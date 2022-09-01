@@ -6,8 +6,6 @@ category: Open Positions
 
 ## What You Will Do
 
-We have built a marketplace that allows buyers and sellers to transact any kind of data.
-
 Here are the kinds of projects you will likely work on:
 
 - Add capabilities to our query execution and data classification engines to make it possible to fulfill any buyer

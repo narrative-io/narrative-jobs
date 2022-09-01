@@ -41,7 +41,7 @@ As such, we should go over the following criteria when reviewing resumes (usual 
 - +/- 3 hours EST. The further from EST, the stronger the rest of the attributes need to be.
 - Has worked remotely before.
 - Has worked for a small (< 15 developers, < 50 employee) company.
-- Has worked with specific technology in our stack: Scala, AWS, "Big Data", etc.
+- Has worked with specific technology in our stack: Scala, AWS, Spark, Iceberg, "Big Data", etc.
 - Is a good written communicator, initial communication is clear and understandable
 - (Bonus): initial cover email is not a s/$COMPANY/Narrative template. Did this person even read the job posting?
 
