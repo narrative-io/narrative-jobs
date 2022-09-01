@@ -12,7 +12,7 @@ category: ''
 
 Narrative I/O is hiring:
 
-- [Scala/AWS/Spark Backend Engineers (Remote US and Canada)](/open-positions/backend-engineer)
+- [Senior Backend Engineer (Remote US and Canada)](/open-positions/backend-engineer)
 - [Web Software Engineer (Remote US and Canada)](/open-positions/web-software-engineer)
 
 We are currently planning to hire several engineers throughout 2022. If you are interested to explore opportunities
