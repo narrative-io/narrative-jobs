@@ -27,11 +27,9 @@ Here are some highlights of the major backend components:
   the frontend, external applications, etc.).
 - `apps`: a framework for building applications on top the Narrative platform, allowing us and third parties to extend
   the functionality of our systems. Apps use whatever technologies makes sense for the problem at hand, but they
-  typically look like microservices deployed to Fargate with their own RDS postgres instance serving as the persistence
-  layer.
+  typically look like microservices deployed to Fargate.
 - `ingestion`: Lambdas and Spark jobs that ingest supplier data and store it in our Apache Iceberg-backed "lakehouse".
-- `transaction`: Spark jobs that transact the data between the buyers and sellers, including exposing an event log of
-  transaction events, intelligently planning job runs, etc.
+- `transaction`: Spark jobs that transact the data between the buyers and sellers.
 
 ## Ops
 
