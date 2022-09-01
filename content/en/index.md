@@ -11,12 +11,12 @@ category: ''
 ## Open Positions
 
 Narrative I/O is hiring:
+
 - [Scala/AWS/Spark Backend Engineers (Remote US and Canada)](/open-positions/backend-engineer)
 - [Web Software Engineer (Remote US and Canada)](/open-positions/web-software-engineer)
 
-We are currently planning to hire several engineers throughout 2021. If you are interested to explore opportunities 
-but cannot make an immediate move, do not hesitate to reach out, we are flexible. 
-
+We are currently planning to hire several engineers throughout 2022. If you are interested to explore opportunities
+but cannot make an immediate move, do not hesitate to reach out, we are flexible.
 
 ## Technical Stack
 
