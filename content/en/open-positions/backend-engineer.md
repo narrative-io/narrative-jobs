@@ -7,7 +7,7 @@ category: Open Positions
 ## What You Will Do
 
 We currently have a marketplace that connects buyers and sellers of AdTech data, and we are building on this success to
-make it possible to transact any other kinds of data.
+make it possible to transact any other kind of data.
 
 Here are the kinds of projects you will likely work on:
 
