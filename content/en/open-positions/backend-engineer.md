@@ -11,7 +11,7 @@ make it possible to transact any other kinds of data.
 
 Here are the kinds of projects you will likely work on:
 
-- Add capabilities to our query execution and data classification engines to make it possible to fulfill any buyer
+- Add capabilities to our query execution and data classification engines to make it possible to answer any buyer
   query.
 - Iterate on our forecasting system so that buyers get faster, more accurate insights into the volume and quality of
   data they are purchasing.
