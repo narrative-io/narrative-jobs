@@ -46,7 +46,7 @@ The ideal candidate should:
 - Have experience operating in a cloud environment like Amazon Web Services, Google Compute Engine, or similar.
 - Be able to work across all aspects of backend systems, from application code to SQL to systems administration.
 - Not be afraid of contributing to the entire stack (from the UI to Devops) when the need arises.
-  <common-section section-name="common-requirements"></common-section>
+<common-section section-name="common-requirements"></common-section>
 
 ## The Team
 
