@@ -52,14 +52,14 @@ currently use Github perform these reviews, and most reviews are done post-merge
 However there are occasional cases where someone in the team will request a pre-merge review to validate assumptions /
 have additional pairs of eyes on a critical piece of code.
 
-### Daily standup (14:30 EST)
+### Daily standup (13:30 EST)
 
-We meet on Google Meet every day at 14:30 EST for a quick, 15-minute conversation to quickly synchronize and address
+We meet on Google Meet every day at 13:30 EST for a quick, 15-minute conversation to quickly synchronize and address
 any blockers.
 
 ### Dev Weekly
 
-We gather on Google Meet once a week (Tuesday at 14:30 EST) for a 1 hour discussion with the dev team. This is the
+We gather on Google Meet once a week (Tuesday at 13:30 EST) for a 1 hour discussion with the dev team. This is the
 opportunity to raise awareness about any issues, suggest improvements to the process, seek feedback on ideas, etc.
 
 ## Development
