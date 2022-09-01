@@ -26,7 +26,7 @@ The person who is on call will look at the various warnings and alerts in the `#
 identify things that need to be fixed, failed clusters, etc.
 
 The on call will also monitor the `#partner-success` and `#helpdesk` channels to prevent partners and the business from
-beingn blocked on technical issues.
+being blocked on technical issues.
 
 There is also a 30-minute meeting on Monday with the sales team to proritize the work and get an idea about the
 upcoming sales/partner-driven requests.
