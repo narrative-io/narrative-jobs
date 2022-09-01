@@ -19,8 +19,8 @@ Here are the kinds of projects you will likely work on:
 - Design a framework for metering resource usage by partner (e.g. storage, server hours, API calls) and integrate it
   into billing.
 - Improve query planning, optimization, and batching to make sure our transaction jobs are running efficiently.
-- Help buyers and sellers build data workflows on the platform. E.g. enabling buyers use the output of one of their
-  purchases as an input filter to another purchase.
+- Help buyers and sellers build data workflows on the platform. E.g. enabling buyers to use the output of one of their
+  purchases as an input filter to another.
 - Automate table maintenance tasks like file compaction, data retention, choosing partitioning and sort strategies based
   on statistics gathered about a dataset and historical query patterns, etc.
 - Architect service interfaces and composable subsystems as we scale the team and decompose our monolith.
