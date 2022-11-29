@@ -128,9 +128,10 @@ Each project manages its own `.tool-versions` and specifies the required version
 we depend on.
 
 ```bash
+# Install asdf, formerly asdf.sh was available at $(brew --prefix asdf)/asdf.sh (no libexec in the path)
 brew install asdf
-echo "source $(brew --prefix asdf)/asdf.sh" > ~/.profile.d/zzz_asdf
-source $(brew --prefix asdf)/asdf.sh
+echo "source $(brew --prefix asdf)/libexec/asdf.sh" > ~/.profile.d/zzz_asdf
+source $(brew --prefix asdf)/libexec/asdf.sh
 echo "legacy_version_file = yes" > ~/.asdfrc
 
 # Install Python
