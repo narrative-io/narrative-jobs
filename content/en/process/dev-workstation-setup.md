@@ -340,6 +340,14 @@ the main tools needed for backend development.
   </base-code-block>
 </base-code-group>
 
+#### Apple silicon native JDK
+There is no native OpenJDK for ARM chips.
+[Liberica JDK](https://bell-sw.com/pages/downloads/#downloads) helps here:
+```
+brew install liberica-jdk8
+```
+You can read more about that JDK [here](https://bell-sw.com/announcements/2021/03/12/Liberica-on-Apple-Silicon/).
+
 ### sbt
 
 [sbt](http://www.scala-sbt.org/) is the Scala Build Tool
