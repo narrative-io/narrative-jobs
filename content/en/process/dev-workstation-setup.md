@@ -291,6 +291,40 @@ We use it to temporarily acquire a role while performing certain tasks that requ
 brew install remind101/formulae/assume-role
 ```
 
+#### awsume (in case assume-role doesn't work)
+You most likely will meet [segmentation fault](https://github.com/remind101/assume-role/issues/54) error once you use the Apple Silicon chip. Unfortunately, the latest version (0.3.2) is dated 2017; hence, there is a chance that the issue won't be fixed.
+[awsume](https://awsu.me/) is quite the same utility.
+You can find up-to-date installation instructions on [the quickstart page](https://awsu.me/general/quickstart.html).
+
+Ensure that aws credentials contain the role:
+```
+cat ~/.aws/credentials
+[default]
+aws_access_key_id = ID
+aws_secret_access_key = KEY
+
+
+[sudo]
+role_arn = arn:aws:iam::NARRATIVE_ACCOUNT_ID:role/sudo
+source_profile=default
+```
+
+And awsume should list the role:
+```
+awsume -l
+Listing...
+
+=======================AWS Profiles=======================
+PROFILE       TYPE  SOURCE   ACCOUNT
+default       User  None     Unavailable
+sudo          Role  default  NARRATIVE_ACCOUNT_ID
+```
+
+At that point you should be able to change the role:
+```
+awsume sudo
+[sudo] Role credentials will expire 2022-12-16 20:12:30
+```
 
 ## Backend Application Dev
 
