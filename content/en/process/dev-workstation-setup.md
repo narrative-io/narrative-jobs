@@ -120,6 +120,13 @@ activated.
   </base-code-block>
 </base-code-group>
 
+#### Troubleshooting
+In case you have warnings like "Ignore insecure directories and continue [y] or abort compinit [n]?":
+
+```
+compaudit | xargs chmod g-w
+```
+
 ### asdf-vm for Python, Ruby, NodeJS, Terraform
 
 asdf-vm is a CLI tool that can manage multiple language runtime versions on a per-project basis. It is like gvm, nvm, rbenv & pyenv (and more) all in one!
