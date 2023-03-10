@@ -142,9 +142,10 @@ source $(brew --prefix asdf)/libexec/asdf.sh
 echo "legacy_version_file = yes" > ~/.asdfrc
 
 # Install Python
+brew install xz
 asdf plugin-add python https://github.com/danhper/asdf-python.git
-asdf install python 3.9.2
-asdf global python 3.9.2
+asdf install python 3.11.1
+asdf global python 3.11.1
 
 # Install Ruby: still required for working with Jekyll doc that we
 # are phasing out in favor of nuxt-content
