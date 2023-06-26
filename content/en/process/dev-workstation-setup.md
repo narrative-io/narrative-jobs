@@ -15,6 +15,33 @@ The Apple development tools takes quite a while (1hr) to download and it will be
 
 Go to the `Apple` in the menu bar and select `App Store...`. In the search field (upper left side) type `XCode` then click on the `GET` button for XCode (Developer Tools).
 
+### Setup ~/.zshrc.d
+
+Apple now uses ZSH as the default shell in macOS Catalina, so instructions in this guide and in the various READMEs assume zsh. 
+
+To confirm that you are using zsh:
+
+  ```bash
+  echo "$SHELL"
+  ```
+
+Run the instructions for your default shell.
+
+The goal is to make it easier to customize environment variables by adding/overwriting files in the `~/.bashrc.d` (Bash) and `~/.zshrc.d` (ZSH)
+directories. Most setup instructions depend on all files in one of these directories to be automatically sourced when the shell (zsh or bash) is started.
+
+  ```bash
+  cat > ~/.zshrc << 'EOF'
+  # See https://unix.stackexchange.com/a/71258
+  # https://zsh.sourceforge.io/Doc/Release/Files.html#Startup_002fShutdown-Files
+  setopt interactivecomments
+  for f in $(find $HOME/.zshrc.d -type f  | egrep -v '.swp$' | egrep -v '.disabled$' | sort) ; do
+    source "$f"
+  done
+  EOF
+  mkdir -p ~/.zshrc.d
+  ```
+
 ### Homebrew
 
 [Homebrew](https://brew.sh/) is the de-facto package manager for Mac OS X. Most other setup instructions
@@ -22,158 +49,232 @@ depend on having brew installed.
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc.d/00_homebrew
 ```
 
-### Setup the configuration for your default shell
+### Zsh Andidote Plugin Manager
 
-Apple replaces bash with zsh as the default shell in macOS Catalina. To know which shell is your default shell execute the following command in a terminal
+[Antidote](https://getantidote.github.io) is a Zsh plugin manager that is fast. It allows loading plugins from various sources, including from [Oh My Zsh](https://ohmyz.sh). Here is how to set it up with a few plugins, including the zsh-completions plugin.
 
-```bash
-echo "$SHELL"
-```
-
-Run the instructions for your default shell.
-
-<base-code-group>
-  <base-code-block label="zsh" active>
-
-  ```bash
-  cat > ~/.zshrc << 'EOF'
-  setopt interactivecomments
-  [[ -r $HOME/.profile ]] && source $HOME/.profile
-  EOF
-  ```
-
-  </base-code-block>
-  <base-code-block label="bash">
-
-  ```bash
-  cat > ~/.bash_profile << 'EOF'
-  [[ -r $HOME/.profile ]] && source $HOME/.profile
-  EOF
-  ```
-
-  </base-code-block>
-</base-code-group>
-
-
-### Setup ~/.profile.d
-
-The goal is to make it easier to customize environment variables by adding/overwriting files in the `~/.profile.d`
-directory. Most setup instructions depend on all files in the `~/.profile.d` directory to be
-automatically sourced when the shell (zsh or bash) is started
+None of the plugins in the suggested list are specific to Narrative, but the list can serve as a starting point depending on your own preferences.
 
 ```bash
-mkdir -p ~/.profile.d
-cat > ~/.profile << 'EOF'
-for f in $(find $HOME/.profile.d -type f | sort) ; do
-  source "$f"
-done
+brew install antidote
+
+cat > ~/.zshrc.d/antidote << 'EOF'
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+antidote load
 EOF
+
+cat > ~/.zsh_plugins.txt << 'EOF'
+# Some of these plugins presented in:
+# https://travis.media/top-10-oh-my-zsh-plugins-for-productive-developers/
+
+# Full list of Oh My ZSH plugins
+# https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
+
+# Oh-My-ZSH Plugins
+ohmyzsh/ohmyzsh path:lib
+ohmyzsh/ohmyzsh path:plugins/colored-man-pages
+ohmyzsh/ohmyzsh path:plugins/command-not-found
+ohmyzsh/ohmyzsh path:plugins/copybuffer
+ohmyzsh/ohmyzsh path:plugins/copypath
+ohmyzsh/ohmyzsh path:plugins/copyfile
+ohmyzsh/ohmyzsh path:plugins/dirhistory
+# ohmyzsh/ohmyzsh path:plugins/docker
+ohmyzsh/ohmyzsh path:plugins/extract
+ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/git-extras
+ohmyzsh/ohmyzsh path:plugins/history
+ohmyzsh/ohmyzsh path:plugins/jsontools
+# ohmyzsh/ohmyzsh path:plugins/ls
+ohmyzsh/ohmyzsh path:plugins/macos
+ohmyzsh/ohmyzsh path:plugins/magic-enter
+ohmyzsh/ohmyzsh path:plugins/npm
+ohmyzsh/ohmyzsh path:plugins/node
+# ohmyzsh/ohmyzsh path:plugins/osx
+ohmyzsh/ohmyzsh path:plugins/python
+ohmyzsh/ohmyzsh path:plugins/pip
+ohmyzsh/ohmyzsh path:plugins/ruby
+ohmyzsh/ohmyzsh path:plugins/sbt
+# ohmyzsh/ohmyzsh path:plugins/scala
+# ohmyzsh/ohmyzsh path:plugins/ssh-agent
+ohmyzsh/ohmyzsh path:plugins/sudo
+ohmyzsh/ohmyzsh path:plugins/tig
+ohmyzsh/ohmyzsh path:plugins/wd
+ohmyzsh/ohmyzsh path:plugins/web-search
+ohmyzsh/ohmyzsh path:plugins/yarn
+# ohmyzsh/ohmyzsh path:plugins/zsh_reload
+
+# Oh-My-ZSH Theme
+ohmyzsh/ohmyzsh path:themes/robbyrussell.zsh-theme
+
+# zsh-users plugins 
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-history-substring-search
+zsh-users/zsh-completions
+EOF
+
+# clear out the shell's autocompletion cache. See next section if issues
+rm -f ~/.zcompdump && compinit
 ```
 
-### Shell completion  (Optional)
+### Shell completion
 
-Most commands (git, ...) provide advanced tab-completions to make your life easier.  To make use of this mechanism, it needs to be
+Most commands provide advanced tab-completions to make your life easier.  To make use of this mechanism, it needs to be
 activated.
 
-[Programmable completion functions for bash](https://bash-completion.alioth.debian.org/)
+The `zsh-users/zsh-completions` Antidote plugin takes care of setting up the Shell completion. However, if you do not use this plugin for whatever reason, 
+you will need to take care of a few extra steps.
 
+```bash
+brew install zsh-completions
+cat > ~/.zshrc.d/01_completion_brew << 'EOF'
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
-<base-code-group>
-  <base-code-block label="zsh" active>
+  autoload -Uz compinit
+  compinit
+fi
+EOF
 
-  ```bash
-  brew install zsh-completion
+# clear out the shell's autocompletion cache
+rm -f ~/.zcompdump && compinit
 
-  cat  > ~/.profile.d/zsh_completion << 'EOF'
-  if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-    autoload -Uz compinit
-    compinit
-  fi
-  EOF
-
-  chmod go-w /usr/local/share
-  chmod -R go-w '/usr/local/share/zsh'
-  rm -f ~/.zcompdump; compinit
-
-  source ~/.profile.d/zsh_completion
-  ```
-
-  </base-code-block>
-  <base-code-block label="bash">
-
-  ```bash
-  brew install bash-completion
-
-  cat  > ~/.profile.d/bash_completion << 'EOF'
-  if [ -f `brew --prefix`/etc/bash_completion ]; then
-      . `brew --prefix`/etc/bash_completion
-  fi
-  EOF
-
-  source ~/.profile.d/bash_completion
-  ```
-
-  </base-code-block>
-</base-code-group>
+# apply the shell completions
+source ~/.zshrc.d/01_completion_brew
+```
 
 #### Troubleshooting
 In case you have warnings like "Ignore insecure directories and continue [y] or abort compinit [n]?":
 
-```
+```bash
 compaudit | xargs chmod g-w
 ```
 
-### asdf-vm for Python, Ruby, NodeJS, Terraform
+In order to rebuild the completions
+
+```bash
+rm -f ~/.zcompdump && compinit
+```
+
+### asdf-vm for tools and languages that are widely used in the projects
 
 asdf-vm is a CLI tool that can manage multiple language runtime versions on a per-project basis. It is like gvm, nvm, rbenv & pyenv (and more) all in one!
 
 Each project manages its own `.tool-versions` and specifies the required versions it depends on, but let's install default versions for the major languages
 we depend on.
 
+The following instructions provide a way to install the JVMs you need, but if you are interested in exploring other options, it is also possible to use:
+- Homebrew
+- [Coursier Java](https://get-coursier.io/docs/cli-java)
+- [SDK Man](https://sdkman.io/)
+- [Jabba](https://github.com/shyiko/jabba)
+
 ```bash
 # Install asdf, formerly asdf.sh was available at $(brew --prefix asdf)/asdf.sh (no libexec in the path)
 brew install asdf
-echo "source $(brew --prefix asdf)/libexec/asdf.sh" > ~/.profile.d/zzz_asdf
+echo "source $(brew --prefix asdf)/libexec/asdf.sh" > ~/.zshrc.d/zz_asdf
 source $(brew --prefix asdf)/libexec/asdf.sh
 echo "legacy_version_file = yes" > ~/.asdfrc
 
-# Install Python
+# Install Python plugin
 brew install xz
 asdf plugin-add python https://github.com/danhper/asdf-python.git
-asdf install python 3.11.1
-asdf global python 3.11.1
+asdf install python 3.11.3
+asdf global python 3.11.3
 
-# Install Ruby: still required for working with Jekyll doc that we
-# are phasing out in favor of nuxt-content
-asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
-asdf install ruby 2.7.2
-asdf global ruby 2.7.2
-
-# Install Node
+# Install Node plugin
 brew install coreutils gpg
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-asdf install nodejs 14.16.0
-asdf global nodejs 14.16.0
+asdf install nodejs 20.3.1
+asdf global nodejs 20.3.1
 
-# Install terraform
+# Install terraform plugin
 asdf plugin-add terraform https://github.com/Banno/asdf-hashicorp.git
-# some projects still depend on v0.12, but we are migrating to v0.14
-asdf install terraform 0.12.30
-asdf install terraform 0.14.7
-asdf global terraform 0.14.7
+asdf install terraform 1.5.1
+asdf global terraform 1.5.1
+
+# Install k9s plugin
+asdf plugin-add k9s https://github.com/looztra/asdf-k9s
+asdf install k9s 0.27.3
+asdf global k9s 0.27.3
+
+# install argocd plugin
+asdf plugin-add argocd https://github.com/beardix/asdf-argocd.git
+asdf install argocd 2.7.2
+asdf global argocd 2.7.2
+
+# Install java plugin
+asdf plugin-add java https://github.com/halcyon/asdf-java.git
+
+# The 3 JVMs that may be of interest to us: 
+# - We target the JVM 11 release in our builds
+# - We run our software using JVM 11 (EMR) and 17 (Fargate, Lambda, Jenkins) in prod 
+# - We execute the CI builds using JVM 17
+# - Local setup differs between developers
+# check asdf list-all java
+asdf install java temurin-11.0.19+7
+asdf install java temurin-17.0.7+7
+asdf install java temurin-20.0.1+9
+asdf global java temurin-20.0.1+9
+# JVMs can be found in
+# ~/.asdf/installs/java
 ```
+
+For some reason, the `asdf-scala` plugin does not provide recent Scala versions, so a different mechanism must be used instead.
+
+<base-code-group>
+  <base-code-block label="Homebrew">
+
+  ```bash
+  brew install scala
+  ```
+
+  </base-code-block>
+  <base-code-block label="Coursier" active>
+
+  ```bash
+  brew install coursier
+  cat  > ~/.zshrc.d/coursier << 'EOF'
+  fpath=(~/.zsh/completion $fpath)
+  autoload -Uz compinit ; compinit
+  export PATH="$PATH:~/Library/Application Support/Coursier/bin"
+  eval "$(cs java --jvm 20 --env)"
+  EOF
+  source ~/.zshrc.d/coursier
+  cs install scala
+  ```
+
+  </base-code-block>
+  <base-code-block label="SDKMAN">
+
+  ```bash
+  curl -s "https://get.sdkman.io" | bash
+  cat  > ~/.zshrc.d/sdkman << 'EOF'
+  source "$HOME/.sdkman/bin/sdkman-init.sh"
+  EOF
+  source ~/.zshrc.d/sdkman
+  sdk install scala
+  ```
+
+  </base-code-block>
+</base-code-group>
+
 
 ### Docker for desktop
 
 [Docker for desktop](https://hub.docker.com/editions/community/docker-ce-desktop-mac) is used to run local PostgreSQL instances.
 
-[Click here to download the DMG](https://desktop.docker.com/mac/stable/amd64/Docker.dmg) and install it.
-Once it is installed, click on the `preferences` (gear icon on the top right) and check the `Start Docker Desktop when you log in` in the general section. Then click on the Resources/Advanced and make sure you have 4 CPU and 8 Gig of memory. Click on the `Apply & restart` button on the bottom right.
+```bash
+brew install --cask --no-quarantine docker
+```
+
+Once it is installed, 
+- Use the recommended settings
+- Click on the Resources/Advanced and make sure you have at least 4 CPU and 8 Gig of memory. 
+- Login to your account
 
 ### Git
 
@@ -203,7 +304,7 @@ Generate Github SSH Key
 ssh-keygen
 ```
 
-Then manually upload `~/.ssh/id_rsa.pub` to [github](http://www.github.com)
+Then manually upload `~/.ssh/id_rsa.pub` to [github](http://www.github.com) (Settings -> SSH and GPG Keys)
 
 Install hub
 
@@ -211,20 +312,8 @@ Install hub
 
 ```bash
 brew install hub
-echo 'alias git=hub' > ~/.profile.d/hub
-source ~/.profile.d/hub
-```
-
-### direnv
-
-> [direnv](https://direnv.net/) is an environment switcher for the shell. It knows how to hook into bash, zsh, tcsh and fish shell to load or unload environment variables depending on the current directory. This allows project-specific environment variables without cluttering the ~/.profile file.
-
-
-```bash
-brew install direnv
-# Load direnv after everything else has been loaded. In particular after `rbenv` and other shell extensions that manipulate the prompt
-echo 'eval "$(direnv hook $SHELL)"' > ~/.profile.d/zzz_direnv
-source ~/.profile.d/zzz_direnv
+echo 'alias git=hub' > ~/.zshrc.d/hub
+source ~/.zshrc.d/hub
 ```
 
 ## AWS Tools
@@ -270,17 +359,6 @@ aws ec2 describe-instances
 aws s3 ls narrative-artifact-releases
 ```
 
-### Configure FoxyProxy to access EMR UIs (Optional)
-
-[FoxyProxy](https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp?hl=en) lets you use an SSH tunnel as a proxy to
-browse the Hadoop/Spark EMR admin tools.
-
-FoxyProxy is optional because EMR now provides a UI
-
-- Browse to the [EMR console](https://console.aws.amazon.com/elasticmapreduce/home?region=us-east-1)
-- Click on any cluster
-- Click on Enable Web Connections and follow the instructions to configure FoxyProxy
-
 ### Install Packer
 
 We use [Packer](https://www.packer.io/) to build custom AWS AMIs.
@@ -289,23 +367,16 @@ We use [Packer](https://www.packer.io/) to build custom AWS AMIs.
 brew install packer
 ```
 
-### assume-role
-
-> [assume-role](https://github.com/remind101/assume-role) will request and set temporary credentials in your shell environment variables for a given (AWS IAM) role.
-
-We use it to temporarily acquire a role while performing certain tasks that require additional permissions.
+#### Setup awsume
+awsu.me allows temporarily assuming an IAM role [the quickstart page](https://awsu.me/general/quickstart.html).
 
 ```bash
-brew install remind101/formulae/assume-role
+brew install awsume
+awsume-configure
 ```
-
-#### awsume (in case assume-role doesn't work)
-You most likely will meet [segmentation fault](https://github.com/remind101/assume-role/issues/54) error once you use the Apple Silicon chip. Unfortunately, the latest version (0.3.2) is dated 2017; hence, there is a chance that the issue won't be fixed.
-[awsume](https://awsu.me/) is quite the same utility.
-You can find up-to-date installation instructions on [the quickstart page](https://awsu.me/general/quickstart.html).
 
 Ensure that aws credentials contain the role:
-```
+```bash
 cat ~/.aws/credentials
 [default]
 aws_access_key_id = ID
@@ -334,61 +405,22 @@ awsume sudo
 [sudo] Role credentials will expire 2022-12-16 20:12:30
 ```
 
+### PostgreSQL Client
+
+We install both [the official PostgreSQL client](https://www.postgresql.org/) to get access to tools like [pg_dump](https://www.postgresql.org/docs/11/app-pgdump.html)
+as well as [pgcli](https://github.com/dbcli/pgcli) for a more feature-rich CLI tool.
+
+```bash
+brew install postgresql@15 pgcli
+echo "path+=($(brew --prefix postgresql@15)/bin)" > ~/.zshrc.d/postgresql
+source ~/.zshrc.d/postgresql
+```
+
 ## Backend Application Dev
 
 Each project has its own setup instructions and may require installing additional tools, but this section serves as a general guide to install
 the main tools needed for backend development.
 
-### Java SDK
-
-<base-code-group>
-  <base-code-block label="Homebrew">
-
-  ```bash
-  brew tap adoptopenjdk/openjdk
-  brew install --cask adoptopenjdk8
-  ```
-
-  </base-code-block>
-  <base-code-block label="Coursier" active>
-
-  ```bash
-  brew install coursier/formulas/coursier
-  coursier
-  cs java --jvm 8
-
-  cat  > ~/.profile.d/coursier << 'EOF'
-  fpath=(~/.zsh/completion $fpath)
-  autoload -Uz compinit ; compinit
-  export PATH="$PATH:/Users/henri/Library/Application Support/Coursier/bin"
-  eval "$(cs java --jvm 8 --env)"
-  EOF
-
-  source ~/.profile.d/coursier
-
-  ```
-
-  </base-code-block>
-  <base-code-block label="SDKMAN">
-
-  ```bash
-  curl -s "https://get.sdkman.io" | bash
-  cat  > ~/.profile.d/sdkman << 'EOF'
-  source "$HOME/.sdkman/bin/sdkman-init.sh"
-  EOF
-  source ~/.profile.d/sdkman
-  ```
-
-  </base-code-block>
-</base-code-group>
-
-#### Apple silicon native JDK
-There is no native OpenJDK for ARM chips.
-[Liberica JDK](https://bell-sw.com/pages/downloads/#downloads) helps here:
-```
-brew install liberica-jdk8
-```
-You can read more about that JDK [here](https://bell-sw.com/announcements/2021/03/12/Liberica-on-Apple-Silicon/).
 
 ### sbt
 
@@ -420,46 +452,6 @@ Install
 </base-code-group>
 
 
-### Scala Console
-
-The Scala Console REPL is included in the scala toolchain.
-
-<base-code-group>
-  <base-code-block label="Homebrew">
-
-  ```bash
-  brew install scala
-  ```
-
-  </base-code-block>
-  <base-code-block label="Coursier" active>
-
-  ```bash
-  cs install scala
-  ```
-
-  </base-code-block>
-  <base-code-block label="SDKMAN">
-
-  ```bash
-  sdk install scala
-  ```
-
-  </base-code-block>
-</base-code-group>
-
-
-### Coursier
-
-Coursier provides numerous benefits over sbt's default ivy resolvers
-
-- downloading artifacts in parallel
-- better offline mode
-- non obfuscated cache
-- no global lock
-
-It is automatically used by the SBT builds. No need to manually configure it.
-
 ### IntelliJ CE
 
 ```bash
@@ -470,26 +462,8 @@ On first launch:
 - Choose Mac OS X 10.5+ keymap
 - Install Scala plugin
 - Use the newly installed JDK while importing projects
-- Navigate to Preferences / Editor / Code Style / Scala
-- Import the [Narrative I/O Scala Code Style Scheme](https://github.com/narrative-io/narrative-jobs/blob/master/other/app-resources//NarrativeIO.xml).
 
 
-### PostgreSQL Client
-
-We install both [the official PostgreSQL client](https://www.postgresql.org/) to get access to tools like [pg_dump](https://www.postgresql.org/docs/11/app-pgdump.html)
-as well as [pgcli](https://github.com/dbcli/pgcli) for a more feature-rich CLI tool.
-
-```bash
-brew install postgresql pgcli
-```
-
-### Redis Client
-
-The [Redis](https://redis.io/) command-line client.
-
-```bash
-brew install redis
-```
 
 ### Thrift
 
@@ -512,26 +486,8 @@ brew install apache-spark
 Each project has its own setup instructions and may require installing additional tools, but this section serves as a general guide to install
 the main tools needed for backend development.
 
-### PostgreSQL Client
-
-We install both [the official PostgreSQL client](https://www.postgresql.org/) to get access to tools like [pg_dump](https://www.postgresql.org/docs/11/app-pgdump.html)
-as well as [pgcli](https://github.com/dbcli/pgcli) for a more feature-rich CLI tool.
-
-```bash
-brew install postgresql pgcli
-```
-
-### Install jq
-Used by the legacy frontend build
-
-```bash
-brew install jq
-```
 
 ### Vue.js Devtools
 
 [Vue.js devtools](https://github.com/vuejs/vue-devtools) is a great Chrome extension for debugging Vue Apps.
 
-### Augury
-
-[Augury](https://augury.angular.io/) is a great Chrome extension for debugging Angular apps, which we use for the legacy frontend. [Install the chrome extension](https://chrome.google.com/webstore/detail/angular-devtools/ienfalfjdbdpebioblfackkekamfmbnh)
