@@ -367,41 +367,28 @@ We use [Packer](https://www.packer.io/) to build custom AWS AMIs.
 brew install packer
 ```
 
-#### Setup awsume
+#### Setup awsume and AWS profiles
 awsu.me allows temporarily assuming an IAM role [the quickstart page](https://awsu.me/general/quickstart.html).
 
 ```bash
-brew install awsume
+# Homebrew is not an officially supported method of installing awsume. 
+# The officially-recommended way to install awsume is via pipx.
+brew install pipx
+pipx install awsume
 awsume-configure
 ```
 
-Ensure that aws credentials contain the role:
+Then follow the instructions to [connect to the AWS Console using SSO and use the CLI tools](https://github.com/narrative-io/narrative-security)
+
+And awsume should list the roles:
 ```bash
-cat ~/.aws/credentials
-[default]
-aws_access_key_id = ID
-aws_secret_access_key = KEY
-
-
-[sudo]
-role_arn = arn:aws:iam::NARRATIVE_ACCOUNT_ID:role/sudo
-source_profile=default
-```
-
-And awsume should list the role:
-```
 awsume -l
 Listing...
-
-=======================AWS Profiles=======================
-PROFILE       TYPE  SOURCE   ACCOUNT
-default       User  None     Unavailable
-sudo          Role  default  NARRATIVE_ACCOUNT_ID
 ```
 
 At that point you should be able to change the role:
 ```
-awsume sudo
+awsume admin
 [sudo] Role credentials will expire 2022-12-16 20:12:30
 ```
 
