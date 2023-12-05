@@ -367,14 +367,14 @@ We use [Packer](https://www.packer.io/) to build custom AWS AMIs.
 brew install packer
 ```
 
-#### Setup awsume and AWS profiles
+### Setup awsume and AWS profiles
 awsu.me allows temporarily assuming an IAM role [the quickstart page](https://awsu.me/general/quickstart.html).
 
 ```bash
 # Homebrew is not an officially supported method of installing awsume. 
 # The officially-recommended way to install awsume is via pipx.
-brew install pipx
 pipx install awsume
+pipx ensurepath
 awsume-configure
 ```
 
