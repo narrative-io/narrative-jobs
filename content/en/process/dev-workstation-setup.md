@@ -374,11 +374,20 @@ awsu.me allows temporarily assuming an IAM role [the quickstart page](https://aw
 # Homebrew is not an officially supported method of installing awsume. 
 # The officially-recommended way to install awsume is via pipx.
 pipx install awsume
-pipx ensurepath
+pipx ensurepath 
 awsume-configure
 ```
 
-Then follow the instructions to [connect to the AWS Console using SSO and use the CLI tools](https://github.com/narrative-io/narrative-security)
+If `awsume-configure` fails for some reason, you can manually add the following to `~/.zshenv`
+
+```
+#AWSume alias to source the AWSume script
+alias awsume="source awsume"
+
+fpath=(~/.awsume/zsh-autocomplete/ $fpath)
+```
+
+Restart the shell, then follow the instructions to [connect to the AWS Console using SSO and use the CLI tools](https://github.com/narrative-io/narrative-security)
 
 And awsume should list the roles:
 ```bash
