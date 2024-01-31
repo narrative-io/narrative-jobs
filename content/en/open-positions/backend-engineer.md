@@ -23,7 +23,7 @@ segmentation and delivery to platforms like The TradeDesk, as well as clean room
 towards a future where users can leverage our collaboration tools without needing their data to reside on our
 platform; instead our query engine will be embeddable where their data is already at rest.
 
-Here are the kinds of projects you will likely work on:
+Given that background, here are the kinds of projects you will likely work on:
 
 - Add capabilities to [NQL](https://kb.narrative.io/narrative-sql-nql-overview), including:
     - Iterating on our forecasting system so that users get faster, more accurate insights into the volume and
