@@ -90,7 +90,7 @@ know what a series of isolated pull requests are building towards.
 Designing in isolation can lead to analysis paralysis with developers spending time going in circles questioning their
 decisions; when they finally poke their head out to get help, they have to load context into someone else’s head,
 re-litigate the decisions they have already made, and fight off scope creep. The design review process helps us get to
-approximate consensus so we can start building and iterating.
+approximate consensus so that we can start building and iterating.
 
 - Document our decisions for our future selves.
 
