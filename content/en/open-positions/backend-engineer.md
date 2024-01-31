@@ -8,7 +8,7 @@ category: Open Positions
 
 Narrative is building a data collaboration platform focused on making collaboration easy.
 
-Our most successful function lies in operating as a data marketplace where we differentiate ourselves by:
+Our primary strength is functioning as a data marketplace where we differentiate ourselves by:
 
 - Automatically [standardizing data](https://kb.narrative.io/how-rosetta-stone-works), simplifying the user experience
   by eliminating the need to deal with `n` representations of the same underlying concept from different suppliers.
