@@ -15,4 +15,4 @@ to synthesize business requirements, distill the domain, contribute to high-leve
 communicate asynchronously, and more generally work autonomously toward a shared vision.
 
 While the company's headquarters are in NYC, the development team is currently includes engineers working from
-the US (California and New York), Canada (Alberta, British Columbia, and Québec), and Poland.
+the US (California and New York), Canada (Alberta, British Columbia, and Québec), and Poland
