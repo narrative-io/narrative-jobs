@@ -6,7 +6,7 @@ category: Open Positions
 
 ## What You Will Do
 
-Narrative is building a data collaboration platform focused on making collaboration easy
+Narrative is building a data collaboration platform focused on making collaboration easy.
 
 Our most successful function lies in operating as a data marketplace where we differentiate ourselves by:
 
