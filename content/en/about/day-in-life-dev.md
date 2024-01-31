@@ -70,13 +70,13 @@ doc and review.
 
 The process drives risk out of projects and systems by aiming to:
 
-1. Facilitate collaboration between stakeholders and developers.
+- Facilitate collaboration between stakeholders and developers.
 
 The product team is responsible for defining the set of outcomes we want to achieve with a feature or project, but they
 understandably don’t always have a clear idea of what’s technically possible and/or how technical constraints affect
 what we can put in front of customers.
 
-2. Facilitate collaboration between developers.
+- Facilitate collaboration between developers.
 
 We want to break down silos between developers and make it easier to work towards a shared long-term vision for our
 technical platform and product. Nobody knows what they don’t know: having other people contribute their experience and
@@ -85,19 +85,18 @@ thoughts help us build better systems.
 We have code reviews, but they are often too late to give someone meaningful feedback on a design and it’s difficult to
 know what a series of isolated pull requests are building towards.
 
-3. Make us commit to a solution and deliver.
+- Make us commit to a solution and deliver.
 
 Designing in isolation can lead to analysis paralysis with developers spending time going in circles questioning their
 decisions; when they finally poke their head out to get help, they have to load context into someone else’s head,
 re-litigate the decisions they have already made, and fight off scope creep. The design review process helps us get to
 approximate consensus so we can start building and iterating.
 
-4. Document our decisions for our future selves.
+- Document our decisions for our future selves.
 
 Design reviews serve as great documentation for why something is the way it is and what constraints we were working
 under when we built it.
 
--- TODO(mbabic) ask Sami to update the below
 ## A Typical Calendar
 
 We attempt to
