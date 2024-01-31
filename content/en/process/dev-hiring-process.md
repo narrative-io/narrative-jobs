@@ -70,8 +70,8 @@ Useful lines of conversation
     1. Drilling into the tech, look for likes/dislikes, and generally coherent opinions. All tools have their ups and
        downs, so if candidate doesn’t seem to have any likes or dislikes of the tech, they probably did not work too
        deeply with it.
-    2. Also worth going into “soft” mechanics. Was teamwork a big factor? How structured was the environment? Evidence
-       of independent learning / doing is good, vs. “I just took tickets off the queue/from my manager”.
+    2. It's also worth going into “soft” mechanics. Was teamwork a big factor? How structured was the environment?
+       Evidence of independent learning / doing is good, vs. “I just took tickets off the queue/from my manager”.
 2. What are you looking for in your next move?
     1. Specifics include company size, culture, loose vs structured environment, type of work, etc.
     2. Anything they can’t get at their current employer (if applicable)?
@@ -87,21 +87,19 @@ will:
   traditional in-person interview -- we want to be respectful to the candidate and not have them effectively give away
   days of free work.
 - Be completable using the tool chain of the candidate's choice.
-- Have something to do with their actual day to day work, vs algorithmic trickery from Project Euler.
-- Be open ended enough for follow-up discussion on design decisions and tradeoffs that the candidate may have made.
+- Have something to do with their actual day-to-day work, vs. algorithmic trickery from LeetCode.
+- Be open-ended enough for follow-up discussion on design decisions and tradeoffs that the candidate may have made.
 - Be precise enough to be graded on a rubric -- e.g., +5 points for code that builds, +5 points for candidate-written
   unit tests, +5 points for passing our own test suite, -5 points for being vulnerable to sql injection, etc. While
   subjectivity is always a part of evaluation, a rubric along these lines could at least help with defining a "minimum
   pass" point, and serve as a vehicle for improving our judgment + evaluation process in the future.
 
-To that end, we ask backend candidates to implement a pared down data ingress API.
-
 ### Technical follow-up
 
-Assuming the take-home meets our basic requirements, we should invite the candidate in for a follow-up discussion.
+Assuming the take-home meets our basic requirements, we invite the candidate in for a follow-up discussion.
 
 At this point, we should be about 80% sure of the candidate's technical ability. For the tech portion of the follow-up,
-we can raise any questions we had about the candidate's design choices in the exercise, as well as potential extension
+we raise any questions we had about the candidate's design choices in the exercise, as well as potential extension
 questions like "what would you do if we wanted to change these fields on the form" or "how would this system need to
 change to enable reports grouped by hour".
 
