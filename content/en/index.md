@@ -21,7 +21,7 @@ explore opportunities but cannot make an immediate move, do not hesitate to reac
 
 <common-section section-name="technical-stack"></common-section>
 
-## The Team (Remote US and Canada)
+## The Team
 
 <common-section section-name="team"></common-section>
 

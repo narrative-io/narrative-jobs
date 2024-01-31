@@ -39,7 +39,7 @@ Here are some highlights of our major backend components, what they do, and the 
 
 - We operate in AWS. Our long-running services are deployed on EC2, Fargate, and Lambda, using Terraform for
   infrastructure automation.
-- We handle a decent amount of data: our miscellaneous S3 buckets contain in excess of 2PB of data.
+- We handle a decent amount of data, e.g. we ingest > 15 TB of data daily.
 - Our scheduled (Spark) jobs are mostly executing on EMR and triggered by Jenkins.
 - We also use other AWS products RDS, SNS/SQS, CloudWatch, etc. as appropriate.
 - Other services we use include: GitHub Actions for CI/CD, DataDog for monitoring, etc.
