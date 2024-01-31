@@ -21,14 +21,14 @@ Here are some highlights of our major backend components, what they do, and the 
   the functionality of our systems. Apps use whatever technologies makes sense for the problem at hand, but they
   typically look like microservices deployed to Fargate.
 - `nql`: the implementation of
-  the [Narrative Query Language](https://blog.narrative.io/introducing-nql-narrative-query-language)
+  the [Narrative Query Language](https://kb.narrative.io/narrative-sql-nql-overview)
   which handles query parsing and the production of a logical plan, logical plan transformations for e.g. approximate
   query processing, incremental view maintenance, data standardization
-  via [Rosetta Stone](https://www.narrative.io/rosetta-stone), and re-compilation of the
+  via [Rosetta Stone](https://kb.narrative.io/how-rosetta-stone-works), and re-compilation of the
   transformed logical plan to a format suitable for execution on one of the engines we support (typically, Spark SQL or
   Snowflake SQL).
 - `ingestion`: Lambdas and Spark jobs that ingest supplier data and store it in our Apache Iceberg-backed "lakehouse".
-- `transaction`: a series of jobs that transact data between buyers and sellers.
+- `transaction`: a series of Spark jobs that execute user queries.
 
 ## Frontend
 
