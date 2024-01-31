@@ -15,7 +15,7 @@ Our most successful function lies in operating as a data marketplace where we di
 - Making platform data accessible through
   the [Narrative Query Language (NQL)](https://kb.narrative.io/narrative-sql-nql-overview) and easy-to-use UIs powered
   by NQL. This enables users to transform, deduplicate, and filter data instead of selecting from a set of
-  seller-defined, pre-packaged datasets.
+  provider-defined, pre-packaged datasets.
 - Giving data providers the ability to define row-level access and pricing policies for their data.
 
 The same foundations powering our marketplace facilitate various data collaboration use cases, such as automatic data
