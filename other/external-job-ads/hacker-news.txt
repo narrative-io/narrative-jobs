@@ -4,13 +4,13 @@ Narrative has been building a data collaboration platform designed for simplicit
 
 Our primary strength is functioning as a data marketplace where we differentiate ourselves by automatically standardizing data across suppliers, making data available via powerful query interfaces (both intuitive UIs and an SQL dialect) instead of via one-size-fits-all pre-packaged datasets, and giving data providers the ability to define row-level access and pricing policies. The same building blocks that power the marketplace enable other data collaboration use cases, like clean room data analysis and the automatic segmentation and delivery of data to other platforms. We're also building towards a future where users can leverage our collaboration tools without needing to push their data to us, instead our query engine will be embeddable where their data is already at rest.
 
-We are a small, remote-first team looking for great developers who want to jump in and take major systems and user-facing features from design to launch. While the company's headquarters are in NYC, the development team is currently includes engineers working from the US (California and New York), Canada (Alberta, British Columbia, and Québec), and Poland.
+We are a small, remote-first team looking for great developers who want to jump in and take major systems and user-facing features from design to launch. While the company's headquarters are in NYC, the development team currently includes engineers working from the US (California and New York), Canada (Alberta, British Columbia, and Québec), and Poland.
 
 In brief, the technologies we use are:
 
 - Scala, Spark, Apache Iceberg, and Apache Calcite in the backend. We love functional programming and make use of libraries like Cats, Cats-Effect, and FS2, but we keep a pragmatic stance on purity given our exposure to the Spark ecosystem.
 
-- Our services are deployed on AWS and provisioned using Terraform. We make leverage the usual suspects: Fargate, EMR, RDS, Lambda, etc. and we're starting to lean into Kubernetes. Being a small team, we think twice before rolling out custom infrastructure that we'll need to monitor and maintain.
+- Our services are deployed on AWS and provisioned using Terraform. We leverage the usual suspects: Fargate, EMR, RDS, Lambda, etc. and we're starting to lean into Kubernetes. Being a small team, we think twice before rolling out custom infrastructure that we'll need to monitor and maintain.
 
 - On the frontend, we use Typescript, VueJS, PrimeVue, Nuxt, and Vite.
 
