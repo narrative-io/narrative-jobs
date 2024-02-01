@@ -9,7 +9,7 @@ We are a small, remote-first team looking for great developers who want to jump 
 In brief, the technologies we use are:
 
 - Scala, Spark, and Apache Iceberg in the backend. We love functional programming and make use of libraries like Cats and Cats-Effect, but we keep a pragmatic stance on purity given our exposure to the Spark ecosystem.
-- Our services are deployed on AWS and provisioned using Terraform. We make use of the usual suspects like Fargate, EMR, RDS, and Lambda. Being a small team, we think twice before rolling out custom infrastructure that we'll need to monitor and maintain.
+- Our services are deployed on AWS and provisioned using Terraform. We make leverage the usual suspects: Fargate, EMR, RDS, Lambda, etc. Being a small team, we think twice before rolling out custom infrastructure that we'll need to monitor and maintain.
 - On the frontend, we use Typescript, VueJS, PrimeVue, Nuxt, and Vite.
 
 Job postings and more on information about our team and culture are available at: https://jobs.narrative.io/
