@@ -12,17 +12,16 @@ category: ''
 
 Narrative I/O is hiring:
 
-- [Senior Backend Engineer (Remote US and Canada)](/open-positions/backend-engineer)
-- [Web Software Engineer (Remote US and Canada)](/open-positions/web-software-engineer)
+- [Senior Backend Engineer (Remote)](/open-positions/backend-engineer)
 
-We are currently planning to hire several engineers throughout 2022. If you are interested to explore opportunities
-but cannot make an immediate move, do not hesitate to reach out, we are flexible.
+There is currently only a single position available, but we plan to ramp hiring later in 2024. If you are interested to
+explore opportunities but cannot make an immediate move, do not hesitate to reach out as we are flexible.
 
 ## Technical Stack
 
 <common-section section-name="technical-stack"></common-section>
 
-## The Team (Remote US and Canada)
+## The Team
 
 <common-section section-name="team"></common-section>
 

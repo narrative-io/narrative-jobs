@@ -7,39 +7,35 @@ category: 'About Us'
 
 ## Mission Statement
 
-At Narrative I/O, our mission is to maximize the value of data for our customers.  It has often been said that [data is the new
-currency](http://www.businessinnovationfactory.com/summit/story/data-new-currency) and there is a lot of truth in that
-statement.  Unfortunately, extracting the value of the data and therefore maximizing that currency is often easier said
-than done.  At Narrative we strive to build products that make that value extraction easier for our customers.  While
-the ways we do that will evolve over time  there are some core principles that will remain the same.
+Narrative is the world’s leading data collaboration platform that enables organizations to supercharge their data
+strategy with one powerful, cost-effective suite of tools that anyone can use.
 
-- Eliminate Complexities: Increasing amounts of data produced with little structure. While unstructured data allows for richer
-  data sets it makes it harder to use by the business because it lacks that structure.  Our goal should be to minimize
-  the complexities that come with large unstructured data sets without losing any of its value in the process.
-- Standardization:  One challenge in the data economy is that there are little in way of standards. From format, to
-  licensing, to delivery mechanisms everything is custom across different partners, products, and platforms.  We believe
-  that standards will bring more users to any data application.
-- Discovery and Forecasting: It is our belief that there are a number of different types of data consumers (analysts, data scientists,
-  product developers, etc) and that those consumers often are in search of data sets but with no easy way to discover
-  them. A core part of our offering will make it easier for people to procure data on demand based on their evolving
-  needs.
-- Pricing: While data might be the new currency, no efficient pricing mechanism exists for data. We firmly
-  believe that the market should determine what data is worth and we are committed to building products and features
-  that help develop that market.
+Unlike other data solutions, Narrative's data collaboration platform is focused on fundamental principles that make
+collaboration easier, safer, and more strategic.
 
-## How we do it
+### Autonomy
 
-To realize this mission, we are building a data streaming marketplace that makes it easy to buy, sell and win. 
+Narrative believes that you should own your data strategy and you should have the tools to operate that strategy on your
+own terms. Our software lets you create custom strategies based on what is best for your business. Define custom data
+sets, set your own price, and pick your own partners. 100% end-to-end control.
 
-We do this by creating tools that reduce the friction and increase transparency in the data buying process, creating
-a win-win relationship between buyers and sellers.
+### Privacy & Compliance
 
-There are currently two ways data is transacted in the industry:
-- Via individual point to point integrations, which carries a lot of overhead in both business development and technical integration efforts.
-- Via big data aggregators that introduce opacity in the pricing and provenance of the data.
+Compliance and privacy need to be at the forefront of any data strategy. Narrative empowers our customers to be
+diligent, compliant, and nimble in a quickly evolving environment. We provide transparency, control, and tools that make
+it possible for your organization to leverage data without incurring undue risk.
 
-We aim to combine the best of these two approaches: make it both effortless and transparent to transact data.
+### Data Quality
 
-Our product currently focuses on the adtech niche, and we are building on this success to make it possible to transact any other kinds of data.
+The value you get out of the data is only as good as its quality. Our data collaboration platform gives you the features
+that make it easy to find and validate high-quality data no matter your use case.
 
-You can check [our website](https://www.narrative.io/).
+### Liquidity
+
+Easy access to both buyers or sellers removes the step of having to source them yourself. Narrative operates a data
+marketplace that provides both sides with instant opportunities without giving up visibility or control.
+
+### Transparency
+
+Efficient markets are those where all of the participants have perfect visibility. Our platform allows for buyers and
+sellers to have full line of site into who the participants are and the mechanics of the entire Narrative ecosystem.
