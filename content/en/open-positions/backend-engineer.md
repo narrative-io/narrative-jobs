@@ -6,7 +6,8 @@ category: Open Positions
 
 ## What You Will Do
 
-Narrative is building a data collaboration platform designed for simplicity and ease of use.
+At Narrative is building a data collaboration platform designed for simplicity and ease of use since being founded
+in 2016.
 
 Our primary strength is functioning as a data marketplace where we differentiate ourselves by:
 
@@ -62,6 +63,7 @@ The ideal candidate should:
 - Have experience operating in a cloud environment like Amazon Web Services, Google Compute Engine, or similar.
   Experience deploying and monitoring large data processing systems using Kubernetes (or similar) would be a big plus.
 - Not be afraid of contributing to the entire stack, from the UI to Devops, when the need arises.
+
 <common-section section-name="common-requirements"></common-section>
 
 ## The Team
