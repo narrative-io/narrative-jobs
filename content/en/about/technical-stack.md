@@ -7,7 +7,7 @@ category: 'About Us'
 
 ## Backend
 
-Our applications are primarily developed using Scala and AWS.
+Our backend applications are primarily developed using Scala and AWS.
 
 We sit somewhere in the middle of the “Scala as a worse Haskell” and “Scala as a better Java” spectrum. We love
 functional programming and make use of libraries like `cats`, `cats-effect`, `http4s`, and `doobie`, but we keep a

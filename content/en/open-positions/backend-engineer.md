@@ -6,7 +6,7 @@ category: Open Positions
 
 ## What You Will Do
 
-Narrative is building a data collaboration platform focused on making collaboration easy.
+Narrative is building a data collaboration platform designed for simplicity and ease of use.
 
 Our primary strength is functioning as a data marketplace where we differentiate ourselves by:
 
@@ -18,10 +18,10 @@ Our primary strength is functioning as a data marketplace where we differentiate
   provider-defined, pre-packaged datasets.
 - Giving data providers the ability to define row-level access and pricing policies for their data.
 
-The same foundations powering our marketplace facilitate various data collaboration use cases, such as automatic data
+The same building blocks powering our marketplace enable other data collaboration use cases, like automatic data
 segmentation and delivery to platforms like The TradeDesk, as well as clean room data analysis. We're also building
 towards a future where users can leverage our collaboration tools without needing their data to reside on our
-platform; instead our query engine will be embeddable where their data is already at rest.
+platform; instead, our query engine will be embeddable where their data is already at rest.
 
 Given that background, here are the kinds of projects you will likely work on:
 
