@@ -6,7 +6,7 @@ category: Open Positions
 
 ## What You Will Do
 
-At Narrative is building a data collaboration platform designed for simplicity and ease of use since being founded
+Narrative has been building a data collaboration platform designed for simplicity and ease of use since being founded
 in 2016.
 
 Our primary strength is functioning as a data marketplace where we differentiate ourselves by:
