@@ -115,7 +115,7 @@ we:
 - Walk through deploying the candidate's implementation, allowing them to explain what they'd like or need to change
   before going to prod.
 - Propose hypothetical changes to the sample problem and see how the candidate thinks about them in order to gauge their
-  technical depth and how they handle discussions in which there is no perfect answer. For a backend candidate, we're
+  technical depth and how they handle discussions in which there is no perfect answer. For a backend positions, we're
   looking for evidence that the candidate can:
     - Identify the essential complexity in the task we asked them to complete when it's operating at scale.
     - Think a step or two ahead to find bottlenecks and potential issues.
