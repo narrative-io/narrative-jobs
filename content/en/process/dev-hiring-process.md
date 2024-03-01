@@ -89,19 +89,34 @@ will:
 - Be completable using the tool chain of the candidate's choice.
 - Have something to do with their actual day-to-day work, vs. algorithmic trickery from LeetCode.
 - Be open-ended enough for follow-up discussion on design decisions and tradeoffs that the candidate may have made.
-- Be precise enough to be graded on a rubric -- e.g., +5 points for code that builds, +5 points for candidate-written
-  unit tests, +5 points for passing our own test suite, -5 points for being vulnerable to sql injection, etc. While
-  subjectivity is always a part of evaluation, a rubric along these lines could at least help with defining a "minimum
-  pass" point, and serve as a vehicle for improving our judgment + evaluation process in the future.
+
+We give candidates a lot of freedom in the prompt to focus on what they think is important as a way of allowing them
+to show us their values, but as a guide we evaluate submissions using roughly the following high-level criteria:
+
+- Does the submission solve the stated problem and pass our tests?
+- How did the candidate gain confidence that their submission worked?
+- Is the application coherently structured in a way that's idiomatic to the tools and libraries being used? Do the
+  choices they made give us any positive insight into how they think about building larger systems for maintainability
+  and correctness?
+- Did the candidate explain their choices and communicate known issues or limitations with their solution? Did they call
+  out issues they did not address in the interest of time?
 
 ### Technical follow-up
 
 Assuming the take-home meets our basic requirements, we invite the candidate in for a follow-up discussion.
 
 At this point, we should be about 80% sure of the candidate's technical ability. For the tech portion of the follow-up,
-we raise any questions we had about the candidate's design choices in the exercise, as well as potential extension
-questions like "what would you do if we wanted to change these fields on the form" or "how would this system need to
-change to enable reports grouped by hour".
+we:
 
-The technical follow-up is an opportunity to challenge the candidate on their design and architectural choices as well
-as to figure out whether they understand the operational, scaling, maintainability, etc. consequences of those choices.
+- Work through all the nitpicky questions that came up during their review to get a sense of whether they can motivate
+  some of the stylistic choices they made and see how they think about the micro-decisions we make day-to-day.
+- Raise any questions we have about the candidate's design choices in the exercise. Do they understand the operational,
+  scaling, and maintainability consequences of those choices?
+- Walk through deploying the candidate's implementation, allowing them to explain what they'd like or need to change
+  before doing going to prod.
+- Propose hypothetical changes to the sample problem and see how the candidate thinks about them in order to gauge their
+  technical depth and how they handle discussions in which there is no perfect answer. For a backend candidate, we're
+  looking for evidence that the candidate can:
+    - Identify the essential complexity in the task we asked them to complete when it's operating at scale.
+    - Think a step or two ahead to find bottlenecks and potential issues.
+    - Talk through and weigh relevant tradeoffs when requirements get more complex.
