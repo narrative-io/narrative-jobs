@@ -95,9 +95,9 @@ to show us their values, but as a guide we evaluate submissions using roughly th
 
 - Does the submission solve the stated problem and pass our tests?
 - How did the candidate gain confidence that their submission worked?
-- Is the application coherently structured in a way that's idiomatic to the tools and libraries being used? Do the
-  choices they made give us any positive insight into how they think about building larger systems for maintainability
-  and correctness?
+- Is the application coherently structured in a way that's idiomatic to the tools and libraries being used? Does the
+  submission give us any positive insight into how the candidate thinks about building larger systems with
+  maintainability and correctness in mind?
 - Did the candidate explain their choices and communicate known issues or limitations with their solution? Did they call
   out issues they did not address in the interest of time?
 
