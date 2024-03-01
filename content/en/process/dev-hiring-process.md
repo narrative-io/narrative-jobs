@@ -113,7 +113,7 @@ we:
 - Raise any questions we have about the candidate's design choices in the exercise. Do they understand the operational,
   scaling, and maintainability consequences of those choices?
 - Walk through deploying the candidate's implementation, allowing them to explain what they'd like or need to change
-  before doing going to prod.
+  before going to prod.
 - Propose hypothetical changes to the sample problem and see how the candidate thinks about them in order to gauge their
   technical depth and how they handle discussions in which there is no perfect answer. For a backend candidate, we're
   looking for evidence that the candidate can:
