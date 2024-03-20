@@ -10,12 +10,12 @@ category: ''
 
 ## Open Positions
 
-Narrative I/O is not currently hiring. Our most recent opening was filled in March 2024.
+Narrative I/O is not currently hiring.
 
 Although there are no open positions at the moment, if you are interested to explore opportunities with us do not
 hesitate to reach out as we plan to grow in 2024.
 
-If you're interested in learning what a typical opening asks for, here is
+If you're interested in learning what a typical opening looks like, here is
 our [most recent Senior Backend Engineer job posting](/open-positions/backend-engineer).
 
 ## Technical Stack
