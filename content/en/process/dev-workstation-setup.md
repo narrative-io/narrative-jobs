@@ -359,14 +359,6 @@ aws ec2 describe-instances
 aws s3 ls narrative-artifact-releases
 ```
 
-### Install Packer
-
-We use [Packer](https://www.packer.io/) to build custom AWS AMIs.
-
-```bash
-brew install packer
-```
-
 ### Setup awsume and AWS profiles
 awsu.me allows temporarily assuming an IAM role [the quickstart page](https://awsu.me/general/quickstart.html).
 
