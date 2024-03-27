@@ -326,7 +326,7 @@ Install `awscli`
 brew install awscli aws-shell
 ```
 
-The CLI will be installed, but if you're following this document from top-to-bottom you can't access AWS yet.
+The CLI will be installed, but if you're following this document from top to bottom then you can't access AWS yet.
 
 The next step is to follow the instructions for setting up `awsume` which will point you towards the instructions for
 using SSO to fetch AWS credentials.
