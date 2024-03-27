@@ -320,47 +320,19 @@ source ~/.zshrc.d/hub
 
 ### AWS Command-Line Tools
 
-First create [create AWS credentials](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)
-via the console, or speak to one of the other devs to have some created for you.
-
 Install `awscli`
 
 ```bash
 brew install awscli aws-shell
 ```
 
-Configure `awscli` using the generated Access Key
+The CLI will be installed, but if you're following this document from top-to-bottom you can't access AWS yet.
 
-```bash
-$ aws configure
-> AWS Access Key ID [None]: <SECRET>
-> AWS Secret Access Key [None]: <SECRET>
-> Default region name [None]: us-east-1
-> Default output format [None]: json
-```
-
-Some Hadoop/S3 libraries look for the credentials in the `AWS_*` environment variables instead of `~/.aws/credentials` or `~/.aws_credentials`,
-so you may want to define `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
-
-Note: these environment variables do not play well with `assume-role`, so they should not be automatically sourced. Source them at your convenience.
-
-```bash
-ln -s ~/.aws/credentials ~/.aws_credentials
-cat  > ~/.aws/env_config << 'EOF'
-export AWS_ACCESS_KEY_ID=<TO_REPLACE>
-export AWS_SECRET_ACCESS_KEY=<TO_REPLACE>
-EOF
-```
-
-Test the config
-
-```bash
-aws ec2 describe-instances
-aws s3 ls narrative-artifact-releases
-```
+The next step is to follow the instructions for setting up `awsume` which will point you towards the instructions for
+using SSO to fetch AWS credentials.
 
 ### Setup awsume and AWS profiles
-awsu.me allows temporarily assuming an IAM role [the quickstart page](https://awsu.me/general/quickstart.html).
+awsu.me allows temporarily assuming an IAM role. See [the quickstart page](https://awsu.me/general/quickstart.html).
 
 ```bash
 # Homebrew is not an officially supported method of installing awsume. 
@@ -370,26 +342,27 @@ pipx ensurepath
 awsume-configure
 ```
 
-If `awsume-configure` fails for some reason, you can manually add the following to `~/.zshenv`
+If `awsume-configure` fails for some reason, you can manually add the following to `~/.zshenv`:
 
-```
-#AWSume alias to source the AWSume script
+```bash
+# alias awsume to source the awsume script
 alias awsume="source awsume"
 
 fpath=(~/.awsume/zsh-autocomplete/ $fpath)
 ```
 
-Restart the shell, then follow the instructions to [connect to the AWS Console using SSO and use the CLI tools](https://github.com/narrative-io/narrative-security)
+Restart the shell, then follow the instructions to [connect to the AWS Console using SSO and use the CLI tools](https://github.com/narrative-io/narrative-security?tab=readme-ov-file#usage-how-to-access-the-aws-console-and-aws-cli-sso)
 
 And awsume should list the roles:
+
 ```bash
 awsume -l
-Listing...
 ```
 
-At that point you should be able to change the role:
-```
-awsume admin
+At that point you should be able to assume a role:
+
+```bash
+awsume -a admin
 [sudo] Role credentials will expire 2022-12-16 20:12:30
 ```
 
