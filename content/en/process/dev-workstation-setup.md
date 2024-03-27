@@ -469,14 +469,6 @@ We use [Thrift](https://thrift.apache.org/) + Parquet as a serialization mechani
 brew install thrift
 ```
 
-### Apache Spark
-
-[Apache Spark](https://spark.apache.org/) is a unified analytics engine for large-scale data processing.
-
-```bash
-brew install apache-spark
-```
-
 ## Frontend Application Dev
 
 Each project has its own setup instructions and may require installing additional tools, but this section serves as a general guide to install
