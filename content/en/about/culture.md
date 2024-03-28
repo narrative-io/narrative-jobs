@@ -99,7 +99,7 @@ empathy for others and remember the Golden Rule.
 
 Trust is the realization that everyone is working towards the same goal regardless of role, seniority, etc.  We each
 have something different to bring to the table, and while that might result in disagreements on occasion, at the end of
-the say we're all working towards the same end.
+the day we're all working towards the same end.
 
 Taken with the concept of transparency, HRT does not mean that all of our communications need to be "nice" or
 sugar-coated.  It does mean that feedback is welcome and should be constructive and respectful, not given or received as
