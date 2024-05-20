@@ -219,8 +219,8 @@ asdf install java temurin-11.0.19+7
 asdf install java temurin-17.0.7+7
 asdf install java adoptopenjdk-17.0.7+7
 asdf install java temurin-20.0.1+9
-asdf install java temurin-21.0.3+9.0.LTS
-asdf global java temurin-21.0.3+9.0.LTS
+asdf install java temurin-20.0.1+9
+asdf global java temurin-20.0.1+9
 # JVMs can be found in
 # ~/.asdf/installs/java
 ```
@@ -243,7 +243,7 @@ For some reason, the `asdf-scala` plugin does not provide recent Scala versions,
   fpath=(~/.zsh/completion $fpath)
   autoload -Uz compinit ; compinit
   export PATH="$PATH:~/Library/Application Support/Coursier/bin"
-  eval "$(cs java --jvm 20 --env)"
+  eval "$(cs java --jvm 21 --env)"
   EOF
   source ~/.zshrc.d/coursier
   cs install scala
