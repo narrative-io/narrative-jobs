@@ -182,8 +182,8 @@ echo "legacy_version_file = yes" > ~/.asdfrc
 # Install Python plugin
 brew install xz
 asdf plugin-add python https://github.com/danhper/asdf-python.git
-asdf install python 3.11.3
-asdf global python 3.11.3
+asdf install python 3.12.3
+asdf global python 3.12.3
 
 # Install Node plugin
 brew install coreutils gpg
@@ -217,6 +217,8 @@ asdf plugin-add java https://github.com/halcyon/asdf-java.git
 # check asdf list-all java
 asdf install java temurin-11.0.19+7
 asdf install java temurin-17.0.7+7
+asdf install java adoptopenjdk-17.0.7+7
+asdf install java temurin-20.0.1+9
 asdf install java temurin-20.0.1+9
 asdf global java temurin-20.0.1+9
 # JVMs can be found in
@@ -241,7 +243,7 @@ For some reason, the `asdf-scala` plugin does not provide recent Scala versions,
   fpath=(~/.zsh/completion $fpath)
   autoload -Uz compinit ; compinit
   export PATH="$PATH:~/Library/Application Support/Coursier/bin"
-  eval "$(cs java --jvm 20 --env)"
+  eval "$(cs java --jvm 21 --env)"
   EOF
   source ~/.zshrc.d/coursier
   cs install scala
@@ -337,6 +339,7 @@ awsu.me allows temporarily assuming an IAM role. See [the quickstart page](https
 ```bash
 # Homebrew is not an officially supported method of installing awsume. 
 # The officially-recommended way to install awsume is via pipx.
+brew install pipx
 pipx install awsume
 pipx ensurepath 
 awsume-configure
