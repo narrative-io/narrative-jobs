@@ -16,13 +16,13 @@ In practice, you will:
 
 - Maintain and improve our incremental view maintenance engine to ensure we are efficiently and correctly integrating changes from source datasets into derived datasets.
 - Update the NQL compiler to track row-level metadata for billing and governance, including column provenance and lineage.
-- Integrate features like autocomplete, validation, and intelligent suggestions into our NQL editor.
-- Iterate on the structured, “UI-friendly” representation of NQL queries consumed by our query builder frontend.
 - Build a function catalogue system that allows users to define their own UDFs and UDAFs in the target execution environment.
 - Develop advanced access rules and privacy controls so data owner can specify row-level permissions, usage restrictions, and data minimization rules. E.g., an access rule can enforce that an aggregation query that targets a dataset will only emit output rows that are the result aggregating at least 100 distinct values of some input identifier field.
 - Iterate on our forecasting system so that users get faster, more accurate insights into the volume and quality of data they are interested in.
 - Optimize query planning, batching, and execution to make sure compiled queries are running efficiently.
 - Work on general compiler maintenance tasks, like improving error messages, compilation performance, correctness, etc.
+- Integrate features like autocomplete, validation, and intelligent suggestions into our NQL editor.
+- Iterate on the structured, “UI-friendly” representation of NQL queries consumed by our query builder frontend.
 - Work on related systems, like our API and job queue.
 - Develop a deep understanding of our business such that tradeoffs are accurately evaluated and the user-facing consequences of technical choices are clearly communicated to the Product team.
 
@@ -37,7 +37,7 @@ For this role we are looking for someone with experience working on query compil
 That means the ideal candidate should:
 
 - Have worked directly on a query compiler or engine for at least one year, with a solid grasp of the problem domain in general. Apache Calcite experience is ideal, but we would be happy to hear from anyone who has productively worked on a query execution system (whether closed or open source).
-- Have experience working with non-trivial quantities of data. Prior experience with Spark would be ideal, but experience with any distributed query engine (Trino, Dremio, etc.) would also be helpful.
+- Have experience working with non-trivial quantities of data and have at least some working knowledge of distributed query engines like Apache Spark. For context, we ingest > 20 TiB of data in the platform every day.
 
 Our generic, more flexible requirements are:
 
