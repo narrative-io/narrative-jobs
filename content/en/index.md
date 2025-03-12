@@ -1,6 +1,6 @@
 ---
 title: ''
-menuTitle: Programming Jobs
+menuTitle: Engineering Jobs
 description: ''
 position: 1
 category: ''
@@ -10,13 +10,11 @@ category: ''
 
 ## Open Positions
 
-Narrative I/O is not currently hiring.
+- [Senior/Staff Backend Engineer - Query Compiler (Remote)](/open-positions/backend-engineer-query-compiler)
 
-Although there are no open positions at the moment, if you are interested to explore opportunities with us do not
-hesitate to reach out as we plan to grow in 2024.
-
-If you're interested in learning what a typical opening looks like, here is
-our [most recent Senior Backend Engineer job posting](https://github.com/narrative-io/narrative-jobs/blob/main/other/archive/open-positions/backend-engineer.md).
+Note: we plan to open more roles in 2025 for general Backend Engineers and Machine Learning Engineers. If you're
+interested in working with Narrative but don't necessarily meet the requirements listed for an open position, feel
+free to reach out to `hiring-dev@narrative.io` to put your hat in the ring for future openings.
 
 ## Technical Stack
 
@@ -32,4 +30,4 @@ our [most recent Senior Backend Engineer job posting](https://github.com/narrati
 
 ## Dev Hiring Process
 
-Read more about the [dev hiring process](/process/dev-hiring-process) 
+Read more about the [dev hiring process](/process/dev-hiring-process)
