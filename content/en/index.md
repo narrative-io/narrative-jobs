@@ -10,9 +10,11 @@ category: ''
 
 ## Open Positions
 
-Narrative I/O is not currently hiring:
-
 - [Senior/Staff Backend Engineer - Query Compiler (Remote)](/open-positions/backend-engineer-query-compiler)
+
+Note: we plan to open more roles in 2025 for general Backend Engineers and Machine Learning Engineers. If you're
+interested in working with Narrative but don't necessarily meet the requirements listed for an open position, feel
+free to reach out to `hiring-dev@narrative.io` to put your hat in the ring for future openings.
 
 ## Technical Stack
 
