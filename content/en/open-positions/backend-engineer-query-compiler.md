@@ -32,11 +32,11 @@ In practice, you will:
 
 ## Ideal Candidate
 
-For this role we are looking for someone with experience working on query compilers or query execution systems in general.
+For this role we are primarily looking for someone with experience working on query compilers or query execution systems. However, if you feel you have relevant experience that would help the projects noted in the "What You Will Do" section that doesn't perfectly align with what we have below we'd still love to hear from you.
 
-That means the ideal candidate should:
+Our ideal candidate should:
 
-- Have worked directly on a query compiler or engine for at least one year, with a solid grasp of the problem domain in general. Apache Calcite experience is ideal, but we would be happy to hear from anyone who has productively worked on a query execution system (whether closed or open source).
+- Have worked directly on a query compiler, engine, or closely related problem for at least one year, with a solid grasp of the problem domain in general. Apache Calcite experience is ideal, but we would be happy to hear from anyone who has productively worked on a query execution system (whether closed or open source).
 - Have experience working with non-trivial quantities of data and have at least some working knowledge of distributed query engines like Apache Spark. For context, we ingest > 20 TiB of data in the platform every day.
 
 Our generic, more flexible requirements are:
