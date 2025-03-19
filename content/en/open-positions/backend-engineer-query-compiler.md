@@ -32,7 +32,7 @@ In practice, you will:
 
 ## Ideal Candidate
 
-For this role we are primarily looking for someone with experience working on query compilers or query execution systems. However, if you feel you have relevant experience that would help the projects noted in the "What You Will Do" section that doesn't perfectly align with what we have below we'd still love to hear from you.
+For this role we are primarily looking for someone with experience working on query compilers or query execution systems. However, if you feel you have relevant experience that would help with the projects noted in the "What You Will Do" section that doesn't perfectly align with what we have below we'd still love to hear from you.
 
 Our ideal candidate should:
 
