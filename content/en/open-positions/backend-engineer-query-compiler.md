@@ -17,7 +17,7 @@ In practice, you will:
 - Maintain and improve our incremental view maintenance engine to ensure we are efficiently and correctly integrating changes from source datasets into derived datasets.
 - Update the NQL compiler to track row-level metadata for billing and governance, including column provenance and lineage.
 - Build a function catalogue system that allows users to define their own UDFs and UDAFs in the target execution environment.
-- Develop advanced access rules and privacy controls so data owner can specify row-level permissions, usage restrictions, and data minimization rules. E.g., an access rule can enforce that an aggregation query that targets a dataset will only emit output rows that are the result aggregating at least 100 distinct values of some input identifier field.
+- Develop advanced access rules and privacy controls so data owner can specify row-level permissions, usage restrictions, and data minimization rules. E.g., an access rule can enforce that an aggregation query that targets a dataset will only emit output rows that are the result of aggregating at least 100 distinct values of some input identifier field.
 - Iterate on our forecasting system so that users get faster, more accurate insights into the volume and quality of data they are interested in.
 - Optimize query planning, batching, and execution to make sure compiled queries are running efficiently.
 - Work on general compiler maintenance tasks, like improving error messages, compilation performance, correctness, etc.
