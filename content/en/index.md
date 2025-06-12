@@ -16,10 +16,7 @@ Note: we plan to open more roles in 2025 for general Backend Engineers and Machi
 interested in working with Narrative, feel to reach out to `hiring-dev@narrative.io` to put your hat in the ring for
 future openings.
 
-If you're interested in learning what a typical opening looks like, see:
-
-- Our most recent [Senior Backend Engineer - General job posting](https://github.com/narrative-io/narrative-jobs/tree/main/github.com/narrative-io/narrative-jobs/tree/main/other/archive/open-positions/backend-engineer.md)
-- Our most recent [Senior/Staff Backend Engineer - Query Compiler job posting](https://github.com/narrative-io/narrative-jobs/tree/main/github.com/narrative-io/narrative-jobs/tree/main/other/archive/open-positions/backend-engineer-query-compiler.md)
+If you're interested in learning what a typical opening looks like, please browse [our previous openings](https://github.com/narrative-io/narrative-jobs/tree/main/other/archive/open-positions/).
 
 ## Technical Stack
 
