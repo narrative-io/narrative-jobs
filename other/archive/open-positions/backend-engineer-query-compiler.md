@@ -44,7 +44,7 @@ Our generic, more flexible requirements are:
 - Proficiency in a typed functional language such as Scala, F#, or Haskell, or significant experience in their non-functional equivalents (Java, C#) with an interest in Scala and Functional Programming.
 - Experience operating in a cloud environment like Amazon Web Services, Google Compute Engine, or similar. Experience deploying and monitoring large data processing systems using Kubernetes (or similar) would be a big plus.
 - A willingness to contribute across the stack, from UI to operational tasks, when the need arises.
-<common-section section-name="common-requirements"></common-section>
+  <common-section section-name="common-requirements"></common-section>
 
 ## The Team
 
