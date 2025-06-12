@@ -13,8 +13,8 @@ category: ""
 Narrative I/O is **not** currently hiring.
 
 Note: we plan to open more roles in 2025 for general Backend Engineers and Machine Learning Engineers. If you're
-interested in working with Narrative but don't necessarily meet the requirements listed for an open position, feel
-free to reach out to `hiring-dev@narrative.io` to put your hat in the ring for future openings.
+interested in working with Narrative, feel to reach out to `hiring-dev@narrative.io` to put your hat in the ring for
+future openings.
 
 If you're interested in learning what a typical opening looks like, see:
 
