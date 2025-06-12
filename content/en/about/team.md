@@ -1,8 +1,8 @@
 ---
 title: The Team
-description: ''
+description: ""
 position: 6
-category: 'About Us'
+category: "About Us"
 ---
 
 ## The Team
@@ -15,4 +15,5 @@ to synthesize business requirements, distill the domain, contribute to high-leve
 communicate asynchronously, and more generally work autonomously toward a shared vision.
 
 While the company's headquarters are in NYC, the development team currently includes engineers working from
-the US (California, Colorado, and New York), Canada (Alberta, British Columbia, and Québec), Poland, and Serbia.
+the US (California, Colorado, and New York), Canada (Alberta, British Columbia, and Québec), Estonia, Poland, and
+Serbia.
