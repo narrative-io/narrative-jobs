@@ -139,9 +139,6 @@ if type brew &>/dev/null; then
 fi
 EOF
 
-# clear out the shell's autocompletion cache
-rm -f ~/.zcompdump && compinit
-
 # apply the shell completions
 source ~/.zshrc.d/01_completion_brew
 ```
@@ -181,33 +178,38 @@ echo "legacy_version_file = yes" > ~/.asdfrc
 
 # Install Python plugin
 brew install xz
-asdf plugin-add python https://github.com/danhper/asdf-python.git
+asdf plugin add python https://github.com/danhper/asdf-python.git
 asdf install python 3.11.3
-asdf global python 3.11.3
+asdf set -u python 3.11.3
+
+# Install pipx plugin
+asdf plugin add pipx https://github.com/yozachar/asdf-pipx.git
+asdf install pipx 1.7.1
+asdf set -u pipx 1.7.1 
 
 # Install Node plugin
 brew install coreutils gpg
-asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf install nodejs 20.3.1
-asdf global nodejs 20.3.1
+asdf set -u nodejs 20.3.1
 
 # Install terraform plugin
-asdf plugin-add terraform https://github.com/Banno/asdf-hashicorp.git
+asdf plugin add terraform https://github.com/Banno/asdf-hashicorp.git
 asdf install terraform 1.5.1
-asdf global terraform 1.5.1
+asdf set -u terraform 1.5.1
 
 # Install k9s plugin
-asdf plugin-add k9s https://github.com/looztra/asdf-k9s
+asdf plugin add k9s https://github.com/looztra/asdf-k9s
 asdf install k9s 0.27.3
-asdf global k9s 0.27.3
+asdf set -u k9s 0.27.3
 
 # install argocd plugin
-asdf plugin-add argocd https://github.com/beardix/asdf-argocd.git
+asdf plugin add argocd https://github.com/beardix/asdf-argocd.git
 asdf install argocd 2.7.2
-asdf global argocd 2.7.2
+asdf set -u argocd 2.7.2
 
 # Install java plugin
-asdf plugin-add java https://github.com/halcyon/asdf-java.git
+asdf plugin add java https://github.com/halcyon/asdf-java.git
 
 # The 3 JVMs that may be of interest to us: 
 # - We target the JVM 11 release in our builds
@@ -218,7 +220,7 @@ asdf plugin-add java https://github.com/halcyon/asdf-java.git
 asdf install java temurin-11.0.19+7
 asdf install java temurin-17.0.7+7
 asdf install java temurin-20.0.1+9
-asdf global java temurin-20.0.1+9
+asdf set -u java temurin-20.0.1+9
 # JVMs can be found in
 # ~/.asdf/installs/java
 ```
@@ -338,7 +340,7 @@ awsu.me allows temporarily assuming an IAM role. See [the quickstart page](https
 # Homebrew is not an officially supported method of installing awsume. 
 # The officially-recommended way to install awsume is via pipx.
 pipx install awsume
-pipx ensurepath 
+pipx ensurepath
 awsume-configure
 ```
 
