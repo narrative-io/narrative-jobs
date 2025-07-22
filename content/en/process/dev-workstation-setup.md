@@ -42,6 +42,17 @@ directories. Most setup instructions depend on all files in one of these directo
   mkdir -p ~/.zshrc.d
   ```
 
+### Set common environment variables
+
+To set common environment variables to work on Narrative's projects, it's recommended to use the `~/.zshenv` file. This file is sourced by ZSH for every new shell instance, ensuring that the variables are always available.
+
+```bash
+echo 'export NARRATIVE_WORKSPACE="$HOME/narrative"' >> ~/.zshenv
+source ~/.zshenv
+```
+
+`NARRATIVE_WORKSPACE` is an environment variable that points to the directory containing project source code and related files, making it easier to organize and access project resources.
+
 ### Homebrew
 
 [Homebrew](https://brew.sh/) is the de-facto package manager for Mac OS X. Most other setup instructions
