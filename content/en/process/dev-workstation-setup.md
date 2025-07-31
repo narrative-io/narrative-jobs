@@ -9,6 +9,24 @@ This page describes how to setup a Mac OS X workstation to work on Narrative's p
 
 ## Common System Tools
 
+### git
+
+```shell
+brew install git
+```
+To address vulnerabilities like [this](https://github.blog/open-source/git/git-security-vulnerabilities-announced-6/)
+you need to ensure that built-in `/usr/bin/git` **is not being used** neither in CLI nor in any IDE you use to commit changes.
+
+You can catch divergence in CLI.
+```shell
+git --version
+git version 2.50.1
+
+/usr/bin/git --version
+git version 2.39.3 (Apple Git-145)
+```
+And for an IDE, it is necessary to set (or ensure that it was automatically configured) `/opt/homebrew/bin/git` location.
+
 ### Xcode
 
 The Apple development tools takes quite a while (1hr) to download and it will be required later in the installation, so make sure you start the download first, then continue the installation instructions while it is downloading.
