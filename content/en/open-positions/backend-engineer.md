@@ -77,8 +77,10 @@ The ideal candidate should:
 
 - Have experience in a typed functional language such as Scala, F#, or Haskell, or significant experience in their
   non-functional equivalents (Java, C#) with an interest in Scala and Functional Programming.
+
 - Have experience working with non-trivial quantities of data. Prior experience with Spark would be ideal, but
   experience with any distributed query engine (Trino, Dremio, etc.) would also be helpful.
+
 - Have experience operating in a cloud environment like Amazon Web Services, Google Compute Engine, or similar.
   Experience deploying and monitoring large data processing systems using e.g. Kubernetes would be a big plus.
 
