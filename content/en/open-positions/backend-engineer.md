@@ -56,7 +56,10 @@ can collaborate with data wherever it lives.
   of our platform while driving down the cost of building and maintaining support for new destinations.
 
 - Design a framework to enable efficient cross-data plane data delivery (i.e. enable sending data between separate
-  Narrative app installations and, eventually, the federation query execution).
+  Narrative app installations and, eventually, the federation of query execution).
+
+- Add capabilities to our AI training framework, where users can use platform data to train models then use them in
+  queries or in their customizable entity resolution rules as part of our "Composable Identity" solution.
 
 - Improve our data classification engine to make it easier for users to collaborate using any kind of data in the
   platform.
