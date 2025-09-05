@@ -1,5 +1,5 @@
 ---
-title: Senior Backend Engineer (Remote)
+title: Senior Backend Engineer (Remote Global)
 position: 2
 category: Open Positions
 ---
@@ -50,7 +50,7 @@ can collaborate with data wherever it lives.
   Narrative's query engine on customer-owned infrastructure.
 
 - Improve our job system with more efficient scheduling and resource utilization, support for long-running workflows,
-  and stronger error handling.
+  and more robust error handling.
 
 - Build out additional connectors and improve our "Connector Framework" to make it effortless to get data into and out
   of our platform while driving down the cost of building and maintaining support for new destinations.

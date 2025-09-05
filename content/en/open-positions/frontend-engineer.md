@@ -1,5 +1,5 @@
 ---
-title: Senior Backend Engineer (Remote)
+title: Senior Frontend Engineer (Remote US & Canada)
 position: 2
 category: Open Positions
 ---
