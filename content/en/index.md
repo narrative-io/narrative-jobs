@@ -10,13 +10,8 @@ category: ""
 
 ## Open Positions
 
-Narrative I/O is **not** currently hiring.
-
-Note: we plan to open more roles in 2025 for general Backend Engineers and Machine Learning Engineers. If you're
-interested in working with Narrative, feel to reach out to `hiring-dev@narrative.io` to put your hat in the ring for
-future openings.
-
-If you're interested in learning what a typical opening looks like, please browse [our previous openings](https://github.com/narrative-io/narrative-jobs/tree/main/other/archive/open-positions/).
+- [Senior Backend Engineer (Remote Global)](/open-positions/backend-engineer)
+- [Senior Frontend Engineer (Remote US & Canada)](/open-positions/frontend-engineer)
 
 ## Technical Stack
 

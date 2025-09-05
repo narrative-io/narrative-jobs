@@ -1,8 +1,8 @@
 ---
 title: Technical Stack
-description: ''
+description: ""
 position: 8
-category: 'About Us'
+category: "About Us"
 ---
 
 ## Backend
@@ -33,7 +33,7 @@ Here are some highlights of our major backend components, what they do, and the 
 ## Frontend
 
 - Our webapp frontend projects are written in Typescript using Vue.js, Sass, Nuxt, and Vite.
-- Projects are deployed using Cloudflare Pages.
+- Projects are deployed via Cloudflare Pages.
 
 ## Operations
 
