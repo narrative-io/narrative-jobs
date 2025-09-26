@@ -5,4 +5,4 @@ Unlike other data solutions, Narrative's data collaboration platform is focused 
 privacy & compliance, data quality, liquidity, and transparency that make collaboration easier, safer, and more
 strategic.
 
-Read more about [our mission](/about/mission) and check [our website](https://www.narrative.io/).
+Read more about [our mission](/about/mission) and check out [our website](https://www.narrative.io/).
