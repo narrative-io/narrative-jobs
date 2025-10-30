@@ -11,11 +11,11 @@ in 2016.
 
 Our primary strength is functioning as a data marketplace where we differentiate ourselves by:
 
-- Automatically [standardizing data](https://kb.narrative.io/how-rosetta-stone-works), simplifying the user experience
+- Automatically [standardizing data](https://www.narrative.io/knowledge-base/concepts/key-narrative-concepts/rosetta-stone/how-rosetta-stone-works), simplifying the user experience
   by eliminating the need to deal with `n` representations of the same underlying concept from different suppliers.
 
 - Making platform data accessible through
-  the [Narrative Query Language (NQL)](https://kb.narrative.io/narrative-sql-nql-overview) and easy-to-use UIs powered
+  the [Narrative Query Language (NQL)](https://www.narrative.io/knowledge-base/nql) and easy-to-use UIs powered
   by NQL. This enables users to transform, deduplicate, and filter data instead of selecting from a set of
   provider-defined, pre-packaged datasets.
 
