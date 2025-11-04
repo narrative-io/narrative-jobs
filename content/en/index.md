@@ -11,7 +11,6 @@ category: ""
 ## Open Positions
 
 - [Senior Backend Engineer (Remote Global)](/open-positions/backend-engineer)
-- [Senior Frontend Engineer (Remote US & Canada)](/open-positions/frontend-engineer)
 - [Senior Product Manager (New York)](/open-positions/product-manager)
 
 ## Technical Stack
