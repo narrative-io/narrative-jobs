@@ -470,6 +470,36 @@ brew install thrift
 Each project has its own setup instructions and may require installing additional tools, but this section serves as a general guide to install
 the main tools needed for backend development.
 
+### Node Version Manager (nvm)
+
+[nvm](https://github.com/nvm-sh/nvm) allows you to easily install and switch between different Node.js versions.
+
+Install it with Homebrew:
+
+```bash
+brew install nvm
+mkdir ~/.nvm
+echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.zshrc.d/nvm
+echo '[ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"' >> ~/.zshrc.d/nvm
+source ~/.zshrc.d/nvm
+```
+
+Once installed, you can verify it:
+
+```bash
+nvm --version
+```
+
+The `narrative-platform-ui` repository contains an `.nvmrc` file that specifies the required Node.js version.  
+After cloning a repo, run:
+
+```bash
+nvm install
+nvm use
+```
+
+This will install (if needed) and switch to the correct Node.js version specified by the project.
+
 
 ### Vue.js Devtools
 
