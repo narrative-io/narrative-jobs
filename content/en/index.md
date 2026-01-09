@@ -10,7 +10,6 @@ category: ""
 
 ## Open Positions
 
-- [Senior Backend Engineer (Remote Global)](/open-positions/backend-engineer)
 - [Senior Product Manager (New York)](/open-positions/product-manager)
 
 ## Technical Stack
