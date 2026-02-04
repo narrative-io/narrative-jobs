@@ -9,15 +9,22 @@ This page describes how to setup a Mac OS X workstation to work on Narrative's p
 
 ## Common System Tools
 
-### git
+### Git
 
-```shell
+[Git](https://git-scm.com/) is a distributed version control system.
+
+NOTE: Xcode is required at this step; wait until XCode is installed to run this. If it is not finished, you can run the other steps and come back to this one once it's finished.
+
+Install:
+```bash
+sudo xcodebuild -license accept
 brew install git
 ```
+
 To address vulnerabilities like [this](https://github.blog/open-source/git/git-security-vulnerabilities-announced-6/)
 you need to ensure that built-in `/usr/bin/git` **is not being used** neither in CLI nor in any IDE you use to commit changes.
 
-You can catch divergence in CLI.
+You can catch divergence in CLI:
 ```shell
 git --version
 git version 2.50.1
@@ -26,6 +33,33 @@ git version 2.50.1
 git version 2.39.3 (Apple Git-145)
 ```
 And for an IDE, it is necessary to set (or ensure that it was automatically configured) `/opt/homebrew/bin/git` location.
+
+Configure:
+
+The minimum configuration would look like:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email you@narrative.io
+```
+
+Generate Github SSH Key:
+
+```bash
+ssh-keygen
+```
+
+Then manually upload `~/.ssh/id_rsa.pub` to [github](http://www.github.com) (Settings -> SSH and GPG Keys)
+
+Install hub:
+
+[Hub](https://hub.github.com/) provides github-related shortcuts.
+
+```bash
+brew install hub
+echo 'alias git=hub' > ~/.zshrc.d/hub
+source ~/.zshrc.d/hub
+```
 
 ### Xcode
 
@@ -307,46 +341,6 @@ Once it is installed,
 - Click on the Resources/Advanced and make sure you have at least 4 CPU and 8 Gig of memory. 
 - Login to your account
 
-### Git
-
-[Git](https://git-scm.com/) is a distributed version control system
-
-NOTE: Xcode is required at this step, wait until XCode to run this. If it is not finished, you can run the other steps and come back to this one once it's finished.
-
-
-Install
-```bash
-sudo xcodebuild -license accept
-brew install git
-```
-
-Configure
-
-The minimum configuration would look like
-
-```bash
-git config --global user.name "Your Name"
-git config --global user.email you@narrative.io
-```
-
-Generate Github SSH Key
-
-```bash
-ssh-keygen
-```
-
-Then manually upload `~/.ssh/id_rsa.pub` to [github](http://www.github.com) (Settings -> SSH and GPG Keys)
-
-Install hub
-
-[Hub](https://hub.github.com/) provides github-related shortcuts
-
-```bash
-brew install hub
-echo 'alias git=hub' > ~/.zshrc.d/hub
-source ~/.zshrc.d/hub
-```
-
 ## AWS Tools
 
 ### AWS Command-Line Tools
@@ -443,6 +437,35 @@ Install
   </base-code-block>
 </base-code-group>
 
+#### GitHub Packages Credentials
+
+Our shared build plugin (`common-build`) is published to GitHub Packages. To resolve it locally, you need to create a Personal Access Token (PAT) and configure sbt to use it.
+
+**1. Create a Personal Access Token (PAT)**
+
+Go to [Settings → Developer Settings → Personal Access Tokens](https://github.com/settings/tokens) and create a classic PAT with `read:packages` permissions.
+
+**2. Store the PAT in your keychain**
+
+```bash
+read -s TOKEN && echo \
+&& security add-generic-password -a $(whoami) -s github_packages_token -w "$TOKEN" -U \
+&& unset TOKEN
+```
+
+**3. Configure sbt to use the token**
+
+```bash
+mkdir -p ~/.sbt/1.0 && cat > ~/.sbt/1.0/github.sbt <<'EOF'
+import scala.sys.process._
+
+credentials += {
+  val cmd = List("security", "find-generic-password", "-s", "github_packages_token", "-w")
+  val token = cmd.!!.trim
+  Credentials("GitHub Package Registry", "maven.pkg.github.com", "_", token)
+}
+EOF
+```
 
 ### IntelliJ CE
 
@@ -456,14 +479,6 @@ On first launch:
 - Use the newly installed JDK while importing projects
 
 
-
-### Thrift
-
-We use [Thrift](https://thrift.apache.org/) + Parquet as a serialization mechanism for some of the backend jobs.
-
-```bash
-brew install thrift
-```
 
 ## Frontend Application Dev
 
