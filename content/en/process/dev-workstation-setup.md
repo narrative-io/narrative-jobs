@@ -9,24 +9,6 @@ This page describes how to setup a Mac OS X workstation to work on Narrative's p
 
 ## Common System Tools
 
-### git
-
-```shell
-brew install git
-```
-To address vulnerabilities like [this](https://github.blog/open-source/git/git-security-vulnerabilities-announced-6/)
-you need to ensure that built-in `/usr/bin/git` **is not being used** neither in CLI nor in any IDE you use to commit changes.
-
-You can catch divergence in CLI.
-```shell
-git --version
-git version 2.50.1
-
-/usr/bin/git --version
-git version 2.39.3 (Apple Git-145)
-```
-And for an IDE, it is necessary to set (or ensure that it was automatically configured) `/opt/homebrew/bin/git` location.
-
 ### Xcode
 
 The Apple development tools takes quite a while (1hr) to download and it will be required later in the installation, so make sure you start the download first, then continue the installation instructions while it is downloading.
@@ -309,27 +291,25 @@ Once it is installed,
 
 ### Git
 
-[Git](https://git-scm.com/) is a distributed version control system
+We use [Git](https://git-scm.com/) and GitHub.
 
-NOTE: Xcode is required at this step, wait until XCode to run this. If it is not finished, you can run the other steps and come back to this one once it's finished.
+NOTE: Xcode is required at this step; wait until XCode is installed to run this. If it is not finished, you can run the
+other steps and come back to this one once it's finished.
 
-
-Install
+Install:
 ```bash
 sudo xcodebuild -license accept
 brew install git
 ```
 
-Configure
-
-The minimum configuration would look like
+The minimum configuration would look like:
 
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email you@narrative.io
 ```
 
-Generate Github SSH Key
+Generate Github SSH Key:
 
 ```bash
 ssh-keygen
@@ -337,15 +317,21 @@ ssh-keygen
 
 Then manually upload `~/.ssh/id_rsa.pub` to [github](http://www.github.com) (Settings -> SSH and GPG Keys)
 
-Install hub
+To ensure we can address vulnerabilities like [this](https://github.blog/open-source/git/git-security-vulnerabilities-announced-6/)
+in a timely way by running `brew upgrade git`, you need to ensure that built-in `/usr/bin/git` **is not being used**
+in any CLI or IDE you use to commit changes.
 
-[Hub](https://hub.github.com/) provides github-related shortcuts
+You can check if your CLI is using the right version by running:
 
-```bash
-brew install hub
-echo 'alias git=hub' > ~/.zshrc.d/hub
-source ~/.zshrc.d/hub
+```shell
+git --version
+git version 2.50.1
+
+/usr/bin/git --version
+git version 2.39.3 (Apple Git-145)
 ```
+
+For IDEs, it is necessary to set (or ensure that it was automatically configured) `/opt/homebrew/bin/git` location.
 
 ## AWS Tools
 
@@ -443,6 +429,35 @@ Install
   </base-code-block>
 </base-code-group>
 
+#### GitHub Packages Credentials
+
+Our shared build plugin (`common-build`) is published to GitHub Packages. To resolve it locally, you need to create a Personal Access Token (PAT) and configure sbt to use it.
+
+**1. Create a Personal Access Token (PAT)**
+
+Go to [Settings → Developer Settings → Personal Access Tokens](https://github.com/settings/tokens) and create a classic PAT with `read:packages` permissions.
+
+**2. Store the PAT in your keychain**
+
+```bash
+read -s TOKEN && echo \
+&& security add-generic-password -a $(whoami) -s github_packages_token -w "$TOKEN" -U \
+&& unset TOKEN
+```
+
+**3. Configure sbt to use the token**
+
+```bash
+mkdir -p ~/.sbt/1.0 && cat > ~/.sbt/1.0/github.sbt <<'EOF'
+import scala.sys.process._
+
+credentials += {
+  val cmd = List("security", "find-generic-password", "-s", "github_packages_token", "-w")
+  val token = cmd.!!.trim
+  Credentials("GitHub Package Registry", "maven.pkg.github.com", "_", token)
+}
+EOF
+```
 
 ### IntelliJ CE
 
@@ -456,14 +471,6 @@ On first launch:
 - Use the newly installed JDK while importing projects
 
 
-
-### Thrift
-
-We use [Thrift](https://thrift.apache.org/) + Parquet as a serialization mechanism for some of the backend jobs.
-
-```bash
-brew install thrift
-```
 
 ## Frontend Application Dev
 
