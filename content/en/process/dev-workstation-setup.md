@@ -9,58 +9,6 @@ This page describes how to setup a Mac OS X workstation to work on Narrative's p
 
 ## Common System Tools
 
-### Git
-
-[Git](https://git-scm.com/) is a distributed version control system.
-
-NOTE: Xcode is required at this step; wait until XCode is installed to run this. If it is not finished, you can run the other steps and come back to this one once it's finished.
-
-Install:
-```bash
-sudo xcodebuild -license accept
-brew install git
-```
-
-To address vulnerabilities like [this](https://github.blog/open-source/git/git-security-vulnerabilities-announced-6/)
-you need to ensure that built-in `/usr/bin/git` **is not being used** neither in CLI nor in any IDE you use to commit changes.
-
-You can catch divergence in CLI:
-```shell
-git --version
-git version 2.50.1
-
-/usr/bin/git --version
-git version 2.39.3 (Apple Git-145)
-```
-And for an IDE, it is necessary to set (or ensure that it was automatically configured) `/opt/homebrew/bin/git` location.
-
-Configure:
-
-The minimum configuration would look like:
-
-```bash
-git config --global user.name "Your Name"
-git config --global user.email you@narrative.io
-```
-
-Generate Github SSH Key:
-
-```bash
-ssh-keygen
-```
-
-Then manually upload `~/.ssh/id_rsa.pub` to [github](http://www.github.com) (Settings -> SSH and GPG Keys)
-
-Install hub:
-
-[Hub](https://hub.github.com/) provides github-related shortcuts.
-
-```bash
-brew install hub
-echo 'alias git=hub' > ~/.zshrc.d/hub
-source ~/.zshrc.d/hub
-```
-
 ### Xcode
 
 The Apple development tools takes quite a while (1hr) to download and it will be required later in the installation, so make sure you start the download first, then continue the installation instructions while it is downloading.
@@ -340,6 +288,50 @@ Once it is installed,
 - Use the recommended settings
 - Click on the Resources/Advanced and make sure you have at least 4 CPU and 8 Gig of memory. 
 - Login to your account
+
+### Git
+
+We use [Git](https://git-scm.com/) and GitHub.
+
+NOTE: Xcode is required at this step; wait until XCode is installed to run this. If it is not finished, you can run the
+other steps and come back to this one once it's finished.
+
+Install:
+```bash
+sudo xcodebuild -license accept
+brew install git
+```
+
+The minimum configuration would look like:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email you@narrative.io
+```
+
+Generate Github SSH Key:
+
+```bash
+ssh-keygen
+```
+
+Then manually upload `~/.ssh/id_rsa.pub` to [github](http://www.github.com) (Settings -> SSH and GPG Keys)
+
+To ensure we can address vulnerabilities like [this](https://github.blog/open-source/git/git-security-vulnerabilities-announced-6/)
+in a timely way by running `brew upgrade git`, you need to ensure that built-in `/usr/bin/git` **is not being used**
+in any CLI or IDE you use to commit changes.
+
+You can check if your CLI is using the right version by running:
+
+```shell
+git --version
+git version 2.50.1
+
+/usr/bin/git --version
+git version 2.39.3 (Apple Git-145)
+```
+
+For IDEs, it is necessary to set (or ensure that it was automatically configured) `/opt/homebrew/bin/git` location.
 
 ## AWS Tools
 
