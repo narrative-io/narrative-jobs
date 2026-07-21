@@ -167,12 +167,11 @@ In order to rebuild the completions
 rm -f ~/.zcompdump && compinit
 ```
 
-### asdf-vm for tools and languages that are widely used in the projects
+### mise for tools and languages that are widely used in the projects
 
-asdf-vm is a CLI tool that can manage multiple language runtime versions on a per-project basis. It is like gvm, nvm, rbenv & pyenv (and more) all in one!
+[mise](https://mise.jdx.dev/) is a CLI tool that can manage multiple language runtime versions on a per-project basis. It is like gvm, nvm, rbenv & pyenv (and more) all in one, and it replaces our previous use of asdf.
 
-Each project manages its own `.tool-versions` and specifies the required versions it depends on, but let's install default versions for the major languages
-we depend on.
+Each project manages its own `mise.toml` and specifies the required versions it depends on (mise still understands the legacy `.tool-versions` format too). When you `cd` into a repo, mise makes that repo's pinned tools active; run `mise install` to fetch them. Below we install sensible global defaults for the major languages we depend on.
 
 The following instructions provide a way to install the JVMs you need, but if you are interested in exploring other options, it is also possible to use:
 - Homebrew
@@ -181,62 +180,43 @@ The following instructions provide a way to install the JVMs you need, but if yo
 - [Jabba](https://github.com/shyiko/jabba)
 
 ```bash
-# Install asdf, formerly asdf.sh was available at $(brew --prefix asdf)/asdf.sh (no libexec in the path)
-brew install asdf
-echo "source $(brew --prefix asdf)/libexec/asdf.sh" > ~/.zshrc.d/zz_asdf
-source $(brew --prefix asdf)/libexec/asdf.sh
-echo "legacy_version_file = yes" > ~/.asdfrc
+# Install mise and activate it in zsh (see https://mise.jdx.dev/getting-started.html)
+brew install mise
+echo 'eval "$(mise activate zsh)"' > ~/.zshrc.d/zz_mise
+source ~/.zshrc.d/zz_mise
 
-# Install Python plugin
+# Python (needs xz). `mise use -g` installs the version and sets it as the global default.
 brew install xz
-asdf plugin add python https://github.com/danhper/asdf-python.git
-asdf install python 3.11.3
-asdf set -u python 3.11.3
+mise use -g python@3.11.3
 
-# Install pipx plugin
-asdf plugin add pipx https://github.com/yozachar/asdf-pipx.git
-asdf install pipx 1.7.1
-asdf set -u pipx 1.7.1 
+# pipx
+mise use -g pipx@1.7.1
 
-# Install Node plugin
+# Node (needs coreutils, gpg)
 brew install coreutils gpg
-asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf install nodejs 20.3.1
-asdf set -u nodejs 20.3.1
+mise use -g node@20.3.1
 
-# Install terraform plugin
-asdf plugin add terraform https://github.com/Banno/asdf-hashicorp.git
-asdf install terraform 1.5.1
-asdf set -u terraform 1.5.1
+# terraform
+mise use -g terraform@1.5.1
 
-# Install k9s plugin
-asdf plugin add k9s https://github.com/looztra/asdf-k9s
-asdf install k9s 0.27.3
-asdf set -u k9s 0.27.3
+# k9s
+mise use -g k9s@0.27.3
 
-# install argocd plugin
-asdf plugin add argocd https://github.com/beardix/asdf-argocd.git
-asdf install argocd 2.7.2
-asdf set -u argocd 2.7.2
+# argocd
+mise use -g argocd@2.7.2
 
-# Install java plugin
-asdf plugin add java https://github.com/halcyon/asdf-java.git
-
-# The 3 JVMs that may be of interest to us: 
+# Java — the JVMs that may be of interest to us:
 # - We target the JVM 11 release in our builds
-# - We run our software using JVM 11 (EMR) and 17 (Fargate, Lambda, Jenkins) in prod 
+# - We run our software using JVM 11 (EMR) and 17 (Fargate, Lambda, Jenkins) in prod
 # - We execute the CI builds using JVM 17
 # - Local setup differs between developers
-# check asdf list-all java
-asdf install java temurin-11.0.19+7
-asdf install java temurin-17.0.7+7
-asdf install java temurin-20.0.1+9
-asdf set -u java temurin-20.0.1+9
-# JVMs can be found in
-# ~/.asdf/installs/java
+# List what is available with `mise ls-remote java`.
+mise install java@temurin-11.0.19+7 java@temurin-17.0.7+7 java@temurin-20.0.1+9
+mise use -g java@temurin-20.0.1+9
+# Installed JVMs live under ~/.local/share/mise/installs/java (or run `mise where java`).
 ```
 
-For some reason, the `asdf-scala` plugin does not provide recent Scala versions, so a different mechanism must be used instead.
+Recent Scala versions are not always available through the version managers, so Scala is installed separately using one of the following mechanisms.
 
 <base-code-group>
   <base-code-block label="Homebrew">
