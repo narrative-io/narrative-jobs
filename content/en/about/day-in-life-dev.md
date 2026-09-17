@@ -43,9 +43,9 @@ as it is pushed and there is no “weekly code review” meeting where everyone 
 Most reviews are completed post-merge, but there are occasions where a developer will request a pre-merge review to
 validate assumptions or to get an additional pairs of eyes on a critical piece of code.
 
-### Daily standup (13:30 EST)
+### Daily standup (12:30 EST)
 
-We meet on Google Meet every Monday through Thursday at 13:30 EST for a quick, 10-minute conversation to quickly
+We meet on Google Meet every Monday through Thursday at 12:30 EST for a quick, 10-minute conversation to quickly
 synchronize and address any blockers. The daily synchronous meeting is largely a reiteration of what's in `#daily-gsd`
 but is a ceremony we continue to observe for now as a way to keep in touch as a team.
 
