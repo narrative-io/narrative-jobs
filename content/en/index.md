@@ -11,6 +11,7 @@ category: ""
 ## Open Positions
 
 - [Senior Product Manager (New York)](/open-positions/product-manager)
+- [Spontaneous Application](/open-positions/spontaneous-application)
 
 ## Technical Stack
 
